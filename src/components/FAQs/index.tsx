@@ -11,6 +11,7 @@ import MuiAccordionDetails from "@mui/material/AccordionDetails"
 import Typography from "@mui/material/Typography"
 import { Divider, Fade } from "@mui/material"
 import { ArrowDown } from "../SVGs"
+import { faqs as data } from "../data/util"
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -43,16 +44,6 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 export default function FAQSection() {
   const [type, setType] = React.useState<string>("")
   const [expanded, setExpanded] = React.useState<string | false>("panel1")
-  const [data, setData] = React.useState([])
-
-  React.useEffect(() => {
-    fetch("http://localhost:5001/faqs")
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data)
-      })
-      .catch((error) => console.error("Error fetching posts:", error))
-  }, [])
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {

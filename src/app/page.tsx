@@ -33,76 +33,20 @@ import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import { Fonts } from "."
+import { ourCommunities as images } from "@/components/data/util"
+import {
+  MenuProps,
+  StyledMenuItem,
+  StyledSelectFormControl,
+} from "@/components/data"
 
-const ITEM_HEIGHT = 48
-const ITEM_PADDING_TOP = 8
-export const MenuProps = {
-  "& .Mui-selected": {
-    backgroundColor: "#FFFFFF",
-  },
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 300,
-      padding: "16px 12px",
-      display: "flex",
-      alignItems: "flex-start",
-      gap: 8,
-      borderRadius: 8,
-      border: `1px solid #FFF`,
-    },
-  },
-}
-export const StyledMenuItem = styled(MenuItem)({
-  width: 280,
-  font: `normal normal 400 normal 20px/25.08px ${Fonts.primary}`,
-  color: "#000000",
-  padding: 4,
-  background: "#FFFFFF",
-  "&:hover": {
-    background: "#FFFFFF",
-  },
-
-  "&:focused": {
-    background: "#FFFFFF",
-    font: `normal normal 400 normal 20px/25.08px ${Fonts.primary}`,
-  },
-})
-export const StyledSelectFormControl = styled(FormControl)({
-  width: "100%",
-  "& label": {
-    font: `normal normal 400 normal 22px/27.59px ${Fonts.primary}`,
-  },
-  "& label.Mui-focused": {
-    color: "#8A8A8A",
-  },
-  "& .MuiInput-underline:after": {
-    borderBottom: "none",
-  },
-})
-interface ImagesProps {
-  id: number
-  name: string
-  imgPath: string
-  width: number
-  height: number
-}
-;[]
-function srcset(image: string, size: number, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  }
-}
 export default function HomePage() {
   const [search, setSearch] = React.useState("")
   const [type, setType] = React.useState("any")
   const [room, setRoom] = React.useState("any")
   const [price, setPrice] = React.useState("any")
   const [community, setCommunity] = React.useState("any")
-  const [images, setImages] = React.useState([])
+  // const [images, setImages] = React.useState([])
   const [page, setPage] = React.useState(0)
   const pagesize = 3
   const count = images?.length
@@ -115,14 +59,6 @@ export default function HomePage() {
       page > 1 ? setPage(page - 1) : setPage(0)
     }
   }
-  React.useEffect(() => {
-    fetch("http://localhost:5001/our-communities")
-      .then((response) => response.json())
-      .then((data) => {
-        setImages(data)
-      })
-      .catch((error) => console.error("Error fetching posts:", error))
-  }, [])
 
   const handleTypeChange = (event: SelectChangeEvent) => {
     setType(event.target.value)

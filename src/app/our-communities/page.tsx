@@ -17,26 +17,22 @@ import {
 } from "@mui/material"
 import Image from "next/image"
 import React from "react"
-import { MenuProps, StyledMenuItem, StyledSelectFormControl } from "../page"
+import { houseTypes as images } from "@/components/data/util"
+import {
+  MenuProps,
+  StyledMenuItem,
+  StyledSelectFormControl,
+} from "@/components/data"
 
 export default function OurCommunitiesPage() {
   const [search, setSearch] = React.useState("")
   const [forSale, setForSale] = React.useState("")
   const [houseType, setHouseType] = React.useState("")
   const [size, setSize] = React.useState("")
-  const [images, setImages] = React.useState([])
+  // const [images, setImages] = React.useState([])
   const [page, setPage] = React.useState(0)
   const [pagesize, setPagesize] = React.useState(8)
   const [location, setLocation] = React.useState("")
-
-  React.useEffect(() => {
-    fetch("http://localhost:5001/house-types")
-      .then((response) => response.json())
-      .then((data) => {
-        setImages(data)
-      })
-      .catch((error) => console.error("Error fetching posts:", error))
-  }, [])
 
   const handleSearch = (event: any) => {
     setSearch(event.target.value)
@@ -188,7 +184,7 @@ export default function OurCommunitiesPage() {
               ) => (
                 <Box
                   key={`item-${index}`}
-                  className="w-full flex flex-col justify-center items-center gap-4 hover:scale-[1.005] cursor-pointer"
+                  className="w-full flex flex-col justify-center items-center gap-4 cursor-pointer"
                   onClick={() => setLocation(type.location)}
                 >
                   <Box
@@ -202,14 +198,14 @@ export default function OurCommunitiesPage() {
                       alt="A picture"
                       width={402}
                       height={298}
-                      className="w-full lg:w-[280px] xl:w-[280px] xxl:w-[309px] h-[270px] rounded-[4px]"
+                      className="w-full lg:w-[280px] xl:w-[280px] xxl:w-[309px] h-[270px] rounded-[4px] hover:scale-[1.01]"
                     />
                     <Typography className="text-[#000000] text-left font-normal font-primary text-[17px]/[21.32px] px-6">
                       {type.location}
                     </Typography>
                     <Box className="w-full grid grid-cols-2 lg:flex gap-2 lg:gap-6 px-6">
                       <Box
-                        className="w-[128px] lg:w-[190.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1"
+                        className="w-[128px] lg:w-[190.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center">
@@ -224,7 +220,7 @@ export default function OurCommunitiesPage() {
                       </Box>
                       {/* //Couch */}
                       <Box
-                        className="w-[128px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1"
+                        className="w-[128px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center ">
@@ -239,7 +235,7 @@ export default function OurCommunitiesPage() {
                       </Box>
                       {/* //Ruler */}
                       <Box
-                        className="w-[128px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1"
+                        className="w-[128px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center">

@@ -24,7 +24,7 @@ interface StyledTabProps {
   label: string
 }
 
-export const StyledTabs = styled(Tabs)({
+const StyledTabs = styled(Tabs)({
   padding: "0 24px",
   margin: 0,
   [`& .${tabsClasses.scrollButtons}`]: {
@@ -35,7 +35,7 @@ export const StyledTabs = styled(Tabs)({
   },
 })
 
-export const StyledTab = styled((props: StyledTabProps) => (
+const StyledTab = styled((props: StyledTabProps) => (
   <Tab disableRipple {...props} />
 ))(() => ({
   minWidth: 50,
