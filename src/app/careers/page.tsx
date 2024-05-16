@@ -1,6 +1,7 @@
 "use client"
 import { ThinArrowForward } from "@/components/SVGs"
 import { Box, Button, Divider, Typography } from "@mui/material"
+import Link from "next/link"
 import { useState } from "react"
 
 const types = [
@@ -207,12 +208,14 @@ export default function CareerPage() {
                       <Typography className="text-white text-[24px]/[32.63px] md:text-[34px]/[42.63px] font-normal font-primary text-left">
                         {career.name}
                       </Typography>
-                      <Button
-                        endIcon={<ThinArrowForward />}
-                        className="text-white text-[20px]/[30.32px] font-normal font-jetBrain text-left normal-case hover:text-primary hover:scale-105 cursor-pointer"
-                      >
-                        Apply
-                      </Button>
+                      <Link href="mailto:info@amorehomesltd.com">
+                        <Button
+                          endIcon={<ThinArrowForward />}
+                          className="text-white text-[20px]/[30.32px] font-normal font-jetBrain text-left normal-case hover:text-primary hover:scale-105 cursor-pointer"
+                        >
+                          Apply
+                        </Button>
+                      </Link>
                     </Box>
                     <Typography className="text-white text-[15.2px]/[22.33px] md:text-[20px]/[26.33px] font-normal font-primary text-left">
                       {career.description}
