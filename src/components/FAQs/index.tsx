@@ -1,15 +1,15 @@
-import * as React from "react"
-import { styled } from "@mui/material/styles"
+import { Fade } from "@mui/material"
 import MuiAccordion, {
   AccordionProps,
   AccordionSlots,
 } from "@mui/material/Accordion"
+import MuiAccordionDetails from "@mui/material/AccordionDetails"
 import MuiAccordionSummary, {
   AccordionSummaryProps,
 } from "@mui/material/AccordionSummary"
-import MuiAccordionDetails from "@mui/material/AccordionDetails"
 import Typography from "@mui/material/Typography"
-import { Divider, Fade } from "@mui/material"
+import { styled } from "@mui/material/styles"
+import * as React from "react"
 import { ArrowDown } from "../SVGs"
 import { faqs as data } from "../data/util"
 
@@ -87,7 +87,7 @@ export default function FAQSection() {
         className="w-full  flex flex-col justify-center items-center"
         data-aos="fade-up"
       >
-        <h4 className="w-full font-bold font-primary text-[20px]/[28px] lg:text-[28px]/[34.53px] xl:text-[40px]/[54.53px] xxl:text-[64px]/[10.25px] text-center text-[#100808] tracking-[0.36px] uppercase">
+        <h4 className="w-full font-bold font-primary text-[16px]/[24px] lg:text-[28px]/[34.53px] xl:text-[40px]/[54.53px] xxl:text-[64px]/[10.25px] text-center text-[#100808] tracking-[0.36px] uppercase">
           Investing In Real Estate In Abuja
         </h4>
         <div className="w-full flex gap-4 lg:gap-20 justify-center items-center">

@@ -67,7 +67,7 @@ export default function ContactUsPage() {
   console.log("message", message)
   return (
     <div
-      className="w-full flex flex-col gap-4 justify-center lg:justify-start items-center lg:items-start pb-4 md:py-[40px] xl:py-[60px]  px-4 md:px-8 lg:px-[38px] xl:px-[60px] xxl:px-[96px] relative"
+      className="w-full flex flex-col gap-4 justify-center lg:justify-start items-center lg:items-start pb-4 pt-[40px] md:py-[40px] xl:py-[60px]  px-4 md:px-8 lg:px-[38px] xl:px-[60px] xxl:px-[96px] relative"
       data-aos="fade-down"
     >
       <div
@@ -83,13 +83,13 @@ export default function ContactUsPage() {
           <Box className="w-full flex flex-col mt-[50px]">
             <Typography
               variant="subtitle1"
-              className="text-[#041658] font-primary font-normal text-[30px]/[39.18px] lg:text-[80px]/[90px] xl:text-[96px]/[111px] text-left"
+              className="text-[#041658] font-primary font-normal text-[40px]/[39.18px] lg:text-[80px]/[90px] xl:text-[96px]/[111px] text-left"
             >
               Contact Us
             </Typography>
             <Typography
               variant="caption"
-              className="font-normal font-primary text-[24px]/[34px] xl:text-[28px]/[40.39px] text-left text-[#041658]"
+              className="font-normal font-primary text-[18px]/[24px] xl:text-[28px]/[40.39px] text-left text-[#041658]"
             >
               We&apos;ll love to Hear From You
             </Typography>

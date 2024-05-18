@@ -10,35 +10,31 @@ import {
   SearchIcon,
 } from "@/components/SVGs"
 import ContactUsSection from "@/components/contact-us"
+import {
+  MenuProps,
+  StyledMenuItem,
+  StyledSelectFormControl,
+} from "@/components/data"
+import { ourCommunities as images } from "@/components/data/util"
 import HouseTypePage from "@/components/house-type-slides"
 import CommunityImages from "@/components/our-community-slides"
 import {
   Box,
   Button,
   Divider,
-  FormControl,
   Grid,
   IconButton,
   InputAdornment,
   InputLabel,
-  MenuItem,
   Select,
   SelectChangeEvent,
   TextField,
   Typography,
-  styled,
 } from "@mui/material"
 import { isEmpty } from "lodash"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import { Fonts } from "."
-import { ourCommunities as images } from "@/components/data/util"
-import {
-  MenuProps,
-  StyledMenuItem,
-  StyledSelectFormControl,
-} from "@/components/data"
 
 export default function HomePage() {
   const [search, setSearch] = React.useState("")
@@ -482,14 +478,14 @@ export default function HomePage() {
             <Box className="w-full flex flex-col">
               <Typography
                 variant="subtitle1"
-                className="font-primary font-normal text-[19px]/[23.83px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
+                className="font-primary font-normal text-[16px]/[28px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
               >
                 Our Communities
               </Typography>
               <Box className="relative">
                 <Typography
                   variant="subtitle1"
-                  className="font-primary font-normal text-3xl/[23.83px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative"
+                  className="font-primary font-normal text-[25px]/[24px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative mb-4"
                 >
                   Featured Communities
                 </Typography>
@@ -511,7 +507,7 @@ export default function HomePage() {
           </Box>
           <Box component="div" className="flex gap-8 justify-end items-end">
             <Button
-              className="w-[55px] h-[55px] rounded-2xl flex justify-center items-center bg-[#F0F0F0]"
+              className="hidden w-[55px] h-[55px] rounded-2xl md:flex justify-center items-center bg-[#F0F0F0]"
               sx={{ boxShadow: "0px 4px 20px 2px #00000040" }}
               onClick={() => handlePageNavigation("previous")}
               disabled={page === 0}
@@ -519,12 +515,28 @@ export default function HomePage() {
               <ArrowBackward />
             </Button>{" "}
             <Button
-              className="w-[55px] h-[55px] rounded-2xl flex justify-center items-center bg-[#F0F0F0]"
+              className="hidden w-[55px] h-[55px] rounded-2xl md:flex justify-center items-center bg-[#F0F0F0]"
               sx={{ boxShadow: "0px 4px 20px 2px #00000040" }}
               onClick={() => handlePageNavigation("next")}
               disabled={page + 1 === totalPageNumbers || isEmpty(images)}
             >
               <ArrowForward />
+            </Button>
+            <Button
+              className="flex w-[35px] h-[40px] rounded-2xl md:hidden justify-center items-center bg-[#F0F0F0]"
+              sx={{ boxShadow: "0px 4px 20px 2px #00000040" }}
+              onClick={() => handlePageNavigation("previous")}
+              disabled={page === 0}
+            >
+              <ArrowBackward style={{ width: 18, height: 18 }} />
+            </Button>{" "}
+            <Button
+              className="flex w-[35px] h-[40px] rounded-2xl md:hidden justify-center items-center bg-[#F0F0F0]"
+              sx={{ boxShadow: "0px 4px 20px 2px #00000040" }}
+              onClick={() => handlePageNavigation("next")}
+              disabled={page + 1 === totalPageNumbers || isEmpty(images)}
+            >
+              <ArrowForward style={{ width: 18, height: 18 }} />
             </Button>
           </Box>
         </Box>
@@ -543,7 +555,7 @@ export default function HomePage() {
             <Box className="w-full flex flex-col" data-aos="fade-up">
               <Typography
                 variant="subtitle1"
-                className="font-primary font-normal text-[19px]/[23.83px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
+                className="font-primary font-normal text-[16px]/[28px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
               >
                 New Updates
               </Typography>
@@ -551,7 +563,7 @@ export default function HomePage() {
               <Box className="relative">
                 <Typography
                   variant="subtitle1"
-                  className="font-primary font-normal text-3xl/[23.83px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative"
+                  className="font-primary font-normal text-[25px]/[24px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative"
                 >
                   Latest Projects
                 </Typography>
@@ -656,7 +668,7 @@ export default function HomePage() {
 
               <Typography
                 variant="subtitle1"
-                className="font-primary font-normal text-3xl/[23.83px] lg:text-3xl/[42px] xl:text-[28px]/[38px] xxl:text-[32px]/[45.14px] text-left text-primary uppercase flex gap-2 relative left-[80px] top-4"
+                className="font-primary font-normal text-[25px]/[24px] lg:text-3xl/[42px] xl:text-[28px]/[38px] xxl:text-[32px]/[45.14px] text-left text-primary uppercase flex gap-2 relative left-[80px] top-4"
                 data-aos="zoom-in-right"
                 data-aos-once={true}
               >
@@ -665,14 +677,14 @@ export default function HomePage() {
             </Box>
             <Button
               variant="contained"
-              className="w-full h-[50px] lg:h-[60px] xl:[70px] xxl:h-[80px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[28px]/[35.11px] rounded-[10px] bg-[#041658] mt-10"
+              className="w-full h-[50px] lg:h-[60px] xl:[70px] xxl:h-[80px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[28px]/[35.11px] rounded-[10px] bg-[#041658] mt-4 md:mt-10"
               data-aos="fade-left"
               data-aos-once={true}
             >
               View all properties
             </Button>
             <Typography
-              className="w-full px-2 font-primary font-normal text-[#000000] text-left text-[20px]/[25.08px] lg:text-[26px]/[32.62px] xl:text-[30px]/[37.62px]"
+              className="w-full px-2 font-primary font-normal text-[#000000] text-left text-[18px]/[28px] lg:text-[26px]/[32.62px] xl:text-[30px]/[37.62px]"
               data-aos="fade-up"
             >
               Our properties each have their own unique design aesthetic,
@@ -695,7 +707,7 @@ export default function HomePage() {
             <Box className="w-full flex flex-col">
               <Typography
                 variant="subtitle1"
-                className="font-primary font-normal text-[19px]/[23.83px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
+                className="font-primary font-normal text-[16px]/[28px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
                 data-aos="fade-up"
               >
                 Our Home Design
@@ -703,7 +715,7 @@ export default function HomePage() {
               <Box className="relative">
                 <Typography
                   variant="subtitle1"
-                  className="font-primary font-normal text-[28px]/[24px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative"
+                  className="font-primary font-normal text-[25px]/[24px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative"
                   data-aos="fade-up"
                 >
                   Our House Types
@@ -715,7 +727,7 @@ export default function HomePage() {
                     borderWidth: 2,
                     borderColor: "#B59363",
                     position: "absolute",
-                    left: { xs: 240, sm: 310 },
+                    left: { xs: 220, sm: 310 },
                     top: { xs: 25, sm: 35, md: 40, lg: 40 },
                   }}
                 />
@@ -729,7 +741,7 @@ export default function HomePage() {
       <Box
         component="section"
         id="faqs-section"
-        className="w-full flex flex-col gap-4 justify-center lg:justify-start items-center lg:items-start pb-4 pt-[40px] md:py-[40px] xl:py-[60px]  px-4 md:px-8 lg:px-[38px] xl:px-[60px] xxl:px-[96px] relative"
+        className="w-full flex flex-col sm:gap-4 justify-center lg:justify-start items-center lg:items-start pb-4 pt-[40px] md:py-[40px] xl:py-[60px]  px-4 md:px-8 lg:px-[38px] xl:px-[60px] xxl:px-[96px] relative"
         data-aos="fade-up"
       >
         <Box className="w-full flex flex-col lg:flex-row justify-between gap-2 mb-4">
@@ -737,7 +749,7 @@ export default function HomePage() {
             <Box className="w-full flex flex-col">
               <Typography
                 variant="subtitle1"
-                className="font-primary font-normal text-[19px]/[23.83px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
+                className="font-primary font-normal text-[16px]/[24px] lg:text-[28px/[40px] xl:text-3xl/[40px] text-left text-primary uppercase"
                 data-aos="fade-up"
               >
                 Frequently Ask Questions
@@ -746,7 +758,7 @@ export default function HomePage() {
               <Box className="relative">
                 <Typography
                   variant="subtitle1"
-                  className="font-primary font-normal text-3xl/[23.83px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative"
+                  className="font-primary font-normal text-[25px]/[24px] lg:text-4xl/[42px] xl:text-4xl/[58px] xxl:text-4xl/[60.25px] text-left text-[#100808] uppercase flex gap-2 relative"
                   data-aos="fade-up"
                 >
                   More Information

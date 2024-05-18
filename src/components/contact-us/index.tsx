@@ -84,7 +84,7 @@ export default function ContactUsSection() {
             </Typography>
             <Typography
               variant="caption"
-              className="font-normal font-primary text-[24px]/[34px] xl:text-[28px]/[40.39px] text-left text-[#041658]"
+              className="font-normal font-primary text-[18px]/[24px] xl:text-[28px]/[40.39px] text-left text-[#041658]"
             >
               We&apos;ll love to Hear From You
             </Typography>

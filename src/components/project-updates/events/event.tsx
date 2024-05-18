@@ -63,7 +63,7 @@ export default function EventsPage() {
       </div>
       <div className="w-full relative flex flex-col sm:flex-row gap-4">
         <div className="w-full max-w-[1098px]">
-          <div className="w-full relative flex gap-4">
+          <div className="w-full relative flex flex-col md:flex-col gap-4">
             <Image
               src="/images/event-1.jpeg"
               width={509}
@@ -100,7 +100,7 @@ export default function EventsPage() {
             />
           </div>
         </div>
-        <div className="fixed right-16 flex flex-col left-auto gap-6">
+        <div className="fixed left-auto right-2 md:right-12 flex flex-col gap-6">
           <div className="cursor-pointer hover:scale-105">
             <MessageIcon />
           </div>

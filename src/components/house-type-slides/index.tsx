@@ -33,11 +33,11 @@ export default function HouseTypePage() {
     >
       <Swiper
         slidesPerView={1}
-        spaceBetween={5}
+        spaceBetween={0}
         breakpoints={{
           640: {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 10,
           },
           768: {
             slidesPerView: 2,
@@ -95,12 +95,12 @@ export default function HouseTypePage() {
                       height={298}
                       className="w-full lg:w-[380px] xl:w-[380px] xxl:w-[402px] h-[298px] rounded-[40px] hover:scale-[1.01]"
                     />
-                    <Typography className="text-[#000000] text-left font-normal font-primary text-[30px]/[37.62px] px-6">
+                    <Typography className="text-[#000000] text-left font-normal font-primary text-[22px]/[35px] md:text-[30px]/[37.62px] px-6">
                       {type.location}
                     </Typography>
-                    <Box className="w-full grid grid-rows-2 grid-flow-col lg:flex gap-2 lg:gap-6 px-6">
+                    <Box className="w-full grid grid-cols-3 lg:flex gap-2 lg:gap-6 px-1 md:px-6">
                       <Box
-                        className="w-[128px] lg:w-[95.84px] h-[58.39px] flex justify-center items-center rounded-[13px] hover:scale-[1.02]"
+                        className="w-[100px] lg:w-[104.84px] h-[58.39px] flex justify-center items-center rounded-[13px] hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center">
@@ -115,7 +115,7 @@ export default function HouseTypePage() {
                       </Box>
                       {/* //Couch */}
                       <Box
-                        className="w-[128px] lg:w-[95.84px] h-[58.39px] flex justify-center items-center rounded-[13px] hover:scale-[1.02]"
+                        className="w-[100px] lg:w-[104.84px] h-[58.39px] flex justify-center items-center rounded-[13px] hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center">
@@ -130,7 +130,7 @@ export default function HouseTypePage() {
                       </Box>
                       {/* //Ruler */}
                       <Box
-                        className="w-[128px] lg:w-[95.84px] h-[58.39px] flex justify-center items-center rounded-[13px] hover:scale-[1.02]"
+                        className="w-[100px] lg:w-[104.84px] h-[58.39px] flex justify-center items-center rounded-[13px] hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center">
@@ -139,16 +139,16 @@ export default function HouseTypePage() {
                             variant="caption"
                             className="font-normal font-primary text-[#000000] text-left text-[18px]/[22.57px]"
                           >
-                            60cm
+                            {type.dimension}
                           </Typography>
                         </Box>
                       </Box>
                     </Box>
                   </Box>
-                  <Typography className="font-normal font-primary text-[#100808] text-center text-[44px]/[60px] lg:text-[64px]/[80.25px] uppercase">
+                  <Typography className="font-normal font-primary text-[#100808] text-center text-[35px]/[40px] lg:text-[60px]/[80.25px] uppercase">
                     {type.name}
                   </Typography>
-                  <Typography className="font-normal font-primary text-primary text-center text-[18px]/[24.09px] lg:text-[20px]/[30.09px] xl:text-[24px]/[30.09px] uppercase">
+                  <Typography className="font-normal font-primary text-primary text-center text-[16px]/[24px] lg:text-[20px]/[30.09px] xl:text-[24px]/[30.09px] uppercase">
                     Brief description of the house type
                   </Typography>
                 </Box>

@@ -51,7 +51,10 @@ export default function OurCommunitiesPage() {
       className="w-full relative flex flex-col pb-8 pt-[80px] lg:mt-0 md:py-[120px] gap-8 px-4 md:px-8 lg:px-[38px] xl:px-[60px] xxl:px-[96px]"
       data-aos="fade-down"
     >
-      <div className="w-full flex gap-2" data-aos="zoom-in-down">
+      <div
+        className="w-full flex flex-col md:flex-row gap-2"
+        data-aos="zoom-in-down"
+      >
         <TextField
           variant="outlined"
           name="search"
@@ -83,7 +86,6 @@ export default function OurCommunitiesPage() {
               "w-full bg-[#D9D9D9] rounded-[30px] text-[25px]/[31.35px] placeholder:text-[#605F5F] text-[#000000] font-primary font-normal px-6",
           }}
         />
-
         <Box className="w-full bg-[#D9D9D9] rounded-[30px] text-[25px]/[31.35px] text-[#605F5F] font-primary font-normal px-6 py-[18px]">
           For Sale
         </Box>
@@ -168,7 +170,7 @@ export default function OurCommunitiesPage() {
           className="w-full flex justify-start items-start flex-col gap-2"
           data-aos="fade-right"
         >
-          <Box className="w-full xl:w-1/2 xxl:w-[650px] grid grid-cols-2  grid-col-2 md:grid-col-1 xl:grid-cols-2 gap-8 justify-between">
+          <Box className="w-full xl:w-1/2 xxl:w-[650px] grid grid-cols-1  grid-col-2 md:grid-col-1 xl:grid-cols-2 gap-8 justify-between">
             {images?.slice(page * pagesize, page * pagesize + pagesize)?.map(
               (
                 type: {
@@ -203,9 +205,9 @@ export default function OurCommunitiesPage() {
                     <Typography className="text-[#000000] text-left font-normal font-primary text-[17px]/[21.32px] px-6">
                       {type.location}
                     </Typography>
-                    <Box className="w-full grid grid-cols-2 lg:flex gap-2 lg:gap-6 px-6">
+                    <Box className="w-full grid grid-cols-3 lg:flex gap-2 lg:gap-6 px-6">
                       <Box
-                        className="w-[128px] lg:w-[190.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
+                        className="w-[100px] lg:w-[190.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center">
@@ -220,7 +222,7 @@ export default function OurCommunitiesPage() {
                       </Box>
                       {/* //Couch */}
                       <Box
-                        className="w-[128px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
+                        className="w-[100px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center ">
@@ -235,7 +237,7 @@ export default function OurCommunitiesPage() {
                       </Box>
                       {/* //Ruler */}
                       <Box
-                        className="w-[128px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
+                        className="w-[100px] lg:w-[120.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02]"
                         sx={{ boxShadow: "4px 8px 11px 0px #00000040" }}
                       >
                         <Box className="w-full flex gap-1 justify-center items-center">

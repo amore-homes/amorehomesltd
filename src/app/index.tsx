@@ -212,6 +212,19 @@ export default function HomePageLayoutWrapper({
             className="w-full flex flex-col justify-start items-start mt-8"
             disablePadding
           >
+            <ListItemButton
+              onClick={() => {
+                router.push("/")
+                setMobileOpen(false)
+              }}
+              className={
+                pathname === "/" || pathname === "/home"
+                  ? "w-full font-primary font-normal text-[19px]/[23.82px] text-left text-white uppercase underline decoration-[7px] decoration-primary md:decoration-[#000000] flex justify-start items-start cursor-pointer"
+                  : "w-full font-primary font-normal text-[19px]/[23.82px] text-left text-white uppercase flex justify-start items-start cursor-pointer hover:text-primary"
+              }
+            >
+              Home
+            </ListItemButton>
             {menu?.map((item, index) => {
               let itemName = updateKey(item.name.toLowerCase())
               const selected =
@@ -223,8 +236,8 @@ export default function HomePageLayoutWrapper({
                   onClick={() => handleClick(item, index)}
                   className={
                     selected
-                      ? "w-full font-primary font-normal text-[19px]/[23.82px] text-left text-primary-text uppercase underline decoration-[7px] flex justify-start items-start cursor-pointer"
-                      : "w-full font-primary font-normal text-[19px]/[23.82px] text-left text-primary-text uppercase flex justify-start items-start cursor-pointer hover:text-primary"
+                      ? "w-full font-primary font-normal text-[19px]/[23.82px] text-left text-white uppercase underline decoration-[7px] decoration-primary md:decoration-[#000000] flex justify-start items-start cursor-pointer"
+                      : "w-full font-primary font-normal text-[19px]/[23.82px] text-left text-white uppercase flex justify-start items-start cursor-pointer hover:text-primary"
                   }
                 >
                   {item.name}
@@ -335,9 +348,9 @@ export default function HomePageLayoutWrapper({
           sx={{
             display: { xs: "flex", md: "none" },
             "& .MuiDrawer-paper": {
-              backgroundColor: "#FFF",
+              backgroundColor: "#0D216D",
               boxSizing: "border-box",
-              width: "100%",
+              width: 240,
               "&::-webkit-scrollbar": {
                 width: "0.1px !important",
                 height: "0.1px !important",
@@ -400,7 +413,7 @@ export default function HomePageLayoutWrapper({
           >
             <Box className="w-full md:w-1/2 flex gap-4 px-4">
               <LocationIcon style={{ width: 90, height: 90 }} />
-              <Typography className="font-normal font-primary text-white text-[25px]/[40px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
+              <Typography className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
                 Ngozi Okonjo-Iweala Way, Utako, Federal Capital Territory,
                 Nigeria
               </Typography>
@@ -413,7 +426,7 @@ export default function HomePageLayoutWrapper({
             />
             <Box className="w-full md:w-1/2 flex gap-4 px-4">
               <MobilePhone style={{ width: 90, height: 90 }} />
-              <Typography className="font-normal font-primary text-white text-[30px]/[45px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
+              <Typography className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
                 Call +234 000 000 000 For Information about Virtual tours
               </Typography>
             </Box>

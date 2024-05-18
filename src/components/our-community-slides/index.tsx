@@ -31,7 +31,7 @@ export default function CommunityImages({ images, page, pagesize }: any) {
                 loading="lazy"
                 data-aos="fade-left"
               />
-              <Typography className="w-full font-normal font-primary text-center md:text-center text-3xl/[40px] uppercase">
+              <Typography className="w-full font-normal font-primary text-center md:text-center text-[25px]/[40px] sm:text-3xl/[40px] uppercase">
                 {img.name}
               </Typography>
             </Box>

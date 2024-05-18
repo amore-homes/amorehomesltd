@@ -1,5 +1,8 @@
 "use client"
 import { PersonIcon } from "@/components/SVGs"
+import MissionIcon from "@/components/lottie/mission"
+import ValuesIcon from "@/components/lottie/values"
+import VisionIcon from "@/components/lottie/vision"
 import { Avatar, Box, Button, Grid, Typography } from "@mui/material"
 
 const people = [
@@ -65,7 +68,7 @@ export default function AboutUsPage() {
           </Typography>
           <Typography
             variant="h2"
-            className="text-[#041658] font-normal font-primary text-[40px]/[50.07px] lg:text-[43px]/[60.07px] xl:text-[48px]/[52.73px] text-center md:text-left"
+            className="text-[#041658] font-normal font-primary text-[25px]/[30.07px] lg:text-[43px]/[60.07px] xl:text-[48px]/[52.73px] text-center md:text-left"
             data-aos="fade-up"
           >
             Meet Our Team of Experts
@@ -75,7 +78,7 @@ export default function AboutUsPage() {
               className="w-full md:w-1/2 flex flex-col gap-10"
               data-aos="zoom-in"
             >
-              <Grid container spacing={1}>
+              <Grid container columnSpacing={5} rowSpacing={3}>
                 {people?.map(
                   (
                     person: {
@@ -97,7 +100,7 @@ export default function AboutUsPage() {
                             <PersonIcon />
                           </Avatar>
                           <Box className="w-full flex flex-col">
-                            <Typography className="text-[#000000] text-[24px]/[32.63px] md:text-[20px]/[26.63px] font-normal font-primary text-center">
+                            <Typography className="text-[#000000] text-[18px]/[24px] md:text-[20px]/[26.63px] font-normal font-primary text-center">
                               {person.name}
                             </Typography>
                             <Typography className="text-[#041658] text-[15.2px]/[22.33px] md:text-[18px]/[24.33px] font-normal font-primary text-center">
@@ -110,33 +113,8 @@ export default function AboutUsPage() {
                   }
                 )}
               </Grid>
-              <Box className="w-full flex flex-col gap-5 md:gap-1">
-                <Typography
-                  variant="h2"
-                  className="text-[#041658] font-normal font-primary text-[40px]/[50.07px] lg:text-[43px]/[60.07px] xl:text-[48px]/[52.73px] text-center md:text-left"
-                >
-                  Mission and Values
-                </Typography>
-                <Typography
-                  variant="caption"
-                  className="text-[#000000] text-[18px]/[32.63px] md:text-[20px]/[26.63px] font-normal font-primary text-justify"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cumque, illum enim eius culpa harum amet possimus nostrum.
-                  Consectetur blanditiis sit consequuntur cupiditate dolore eum
-                  magnam natus deserunt repudiandae saepe, aliquam voluptate id
-                  at molestias quasi. Ullam optio aperiam corporis similique in?
-                  Vel, illum! Voluptatum doloremque rem labore adipisci sapiente
-                  blanditiis at molestiae nesciunt animi fugiat, aperiam,
-                  commodi minima quasi libero. Commodi sit neque quod quos
-                  deleniti nostrum labore odio explicabo sunt amet quaerat
-                  corrupti minus quibusdam voluptatum saepe aliquam reiciendis
-                  dignissimos, ullam, eaque dicta ab officia delectus, incidunt
-                  mollitia. Reiciendis minima ducimus distinctio ex cupiditate
-                  molestias unde laborum quaerat dolores?
-                </Typography>
-              </Box>
             </Box>
+
             <Box
               className="w-full md:w-1/2 flex justify-center items-center"
               data-aos="fade-left"
@@ -149,6 +127,117 @@ export default function AboutUsPage() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 ></iframe>
               </div>
+            </Box>
+          </Box>
+          <Box
+            component="div"
+            className="w-full flex flex-col gap-5 md:gap-10 mt-10 sm:mt-5"
+          >
+            <Typography
+              variant="h2"
+              className="text-[#041658] font-normal font-primary text-[35px]/[35.07px] lg:text-[43px]/[60.07px] xl:text-[48px]/[52.73px] text-center md:text-left"
+            >
+              Mission and Values
+            </Typography>
+
+            <Box
+              component="div"
+              className="w-full flex flex-col md:flex-row pb-[40px] gap-8"
+            >
+              <Box
+                className="w-full md:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 py-4 rounded-lg"
+                sx={{
+                  boxShadow: "11px 17px 13px 0px #00000040",
+                }}
+                data-aos="fade-right"
+              >
+                <Box className="w-full flex gap-2 items-center">
+                  <MissionIcon />{" "}
+                  <Typography
+                    variant="h2"
+                    className="text-primary font-normal font-primary text-[25px]/[28px] text-center md:text-left"
+                  >
+                    Mission
+                  </Typography>
+                </Box>
+
+                <Typography className="font-normal font-primary text-[#000000] text-[20px]/[28px] text-left">
+                  To provide premium residences that suits the demand of our
+                  clientele through sustainable measures.
+                </Typography>
+              </Box>
+              <Box
+                className="w-full md:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 py-4 rounded-lg"
+                sx={{
+                  boxShadow: "11px 17px 13px 0px #00000040",
+                }}
+                data-aos="fade-up"
+              >
+                <Box className="w-full flex gap-2 items-center">
+                  <VisionIcon />
+                  <Typography
+                    variant="h2"
+                    className="text-primary font-normal font-primary text-[25px]/[28px] text-center md:text-left"
+                  >
+                    Vision
+                  </Typography>
+                </Box>
+                <Typography className="font-normal font-primary text-[#000000] text-[20px]/[28px] text-left">
+                  To be the leading real estate partner providing the best
+                  communal living experience while fostering family friendly
+                  lifestyle in Nigeria.
+                </Typography>
+              </Box>
+
+              <Box
+                className="w-full md:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 py-4 rounded-lg"
+                sx={{
+                  boxShadow: "11px 17px 13px 0px #00000040",
+                }}
+                data-aos="fade-left"
+              >
+                <Box className="w-full flex gap-2 items-center">
+                  <ValuesIcon />
+                  <Typography
+                    variant="h2"
+                    className="text-primary font-normal font-primary text-[25px]/[28px] text-center md:text-left"
+                  >
+                    Core values
+                  </Typography>
+                </Box>
+                <Box component="ol" className="m-0">
+                  <Box
+                    component="li"
+                    className="font-normal font-primary text-[#000000] text-[20px]/[28px] text-left"
+                  >
+                    Efficiency
+                  </Box>
+                  <Box
+                    component="li"
+                    className="font-normal font-primary text-[#000000] text-[20px]/[28px] text-left"
+                  >
+                    Passion
+                  </Box>
+                  <Box
+                    component="li"
+                    className="font-normal font-primary text-[#000000] text-[20px]/[28px] text-left"
+                  >
+                    Partnership
+                  </Box>
+                  <Box
+                    component="li"
+                    className="font-normal font-primary text-[#000000] text-[20px]/[28px] text-left"
+                  >
+                    Innovation
+                  </Box>
+                  <Box
+                    component="li"
+                    className="font-normal font-primary text-[#000000] text-[20px]/[28px] text-left"
+                  >
+                    Customer centric
+                  </Box>
+                </Box>
+              </Box>
             </Box>
           </Box>
         </Box>

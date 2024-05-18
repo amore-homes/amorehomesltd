@@ -334,7 +334,7 @@ export function ArrowForward(props: any) {
 export function ArrowBackward(props: any) {
   return (
     <svg
-      width="29"
+      width="28"
       height="40"
       viewBox="0 0 29 48"
       fill="none"

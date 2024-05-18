@@ -120,7 +120,7 @@ export default function BlogPage() {
             </Typography>
           </div>
         </div>
-        <div className="fixed left-auto right-12 flex flex-col justify-end items-end gap-6 ">
+        <div className="fixed left-auto right-2 md:right-12 flex flex-col justify-end items-end gap-6 ">
           <div className="cursor-pointer hover:scale-105">
             <MessageIcon />
           </div>

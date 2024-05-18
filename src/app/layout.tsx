@@ -9,7 +9,8 @@ import HomePageLayoutWrapper from "."
 
 export const metadata: Metadata = {
   title: "Amore homes",
-  description: "Best and premium housing for sustainability",
+  description:
+    "The leading real estate partner providing the best communal living experience while fostering family friendly lifestyle in Nigeria",
 }
 
 export default function RootLayout({

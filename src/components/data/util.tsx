@@ -257,3 +257,149 @@ export const faqs = [
     type: "property",
   },
 ]
+
+export const aboutUsFaqs = [
+  {
+    id: 1,
+    question: "What makes Amore Homes properties unique?",
+    answer:
+      "We adopt universal design and standardize building production processes. How does Amore Homes promote sustainability in its developments? By ensure a safe and serene environment where energy efficiency is maximized",
+  },
+  {
+    id: 2,
+    question: "What kind of technology is used in Amore Homes properties?",
+    answer: "Home automation, solar powered systems and centralized LPG system",
+  },
+  {
+    id: 3,
+    question: "What are the benefits of living in an Amore Home?",
+    answer:
+      "We guarantee the satisfaction of communal living and luxury comfort.",
+  },
+  {
+    id: 4,
+    question:
+      "What kind of community events and initiatives does Amore Homes support?",
+    answer:
+      "Youth neighbourhood programs such as BRC, sports competitions and numerous awareness programs such as Pink Ribbon.",
+  },
+  {
+    id: 5,
+    question: "Who are the people behind Amore Homes?",
+    answer:
+      "Eloquent businessmen and seasoned professionals lead by Engr. Aliyu Babangida and Arch. Yahya Rufai.",
+  },
+  {
+    id: 6,
+    question: "Can customers schedule a tour of Amore Homes properties?",
+    answer: "Yes, they can.",
+  },
+  {
+    id: 7,
+    question: "How can customers get in touch with Amore Homes?",
+    answer:
+      "Via any of our social media channels; on Instagram @amore_homes and Linkdin @Amore Homes as well as our direct line +2347003000400.",
+  },
+  {
+    id: 7,
+    question: "How can customers get in touch with Amore Homes?",
+    answer:
+      "Via any of our social media channels; on Instagram @amore_homes and Linkdin @Amore Homes as well as our direct line +2347003000400.",
+  },
+  {
+    id: 8,
+    question: "What kind of job opportunities are available at Amore Homes?",
+    answer:
+      "Affiliate marketing, project team members (Architects, builders, surveyors, engineers, project marketers, accountants, human resource managers and investment advisors).",
+  },
+  {
+    id: 9,
+    question: "What kind of events are hosted by Amore Homes?",
+    answer: "Team bonding, Sustainability and technology themed events.",
+  },
+  {
+    id: 10,
+    question:
+      "How does Amore Homes ensure a positive work culture for its employees?",
+    answer: "By imbibing the company’s core value in each and every employee.",
+  },
+  {
+    id: 11,
+    question:
+      "Can customers subscribe to a blog or RSS feed to stay updated on news and trends in the real estate industry?",
+    answer: "Yes, they can.",
+  },
+  {
+    id: 12,
+    question:
+      "Can customers access press releases and other media information about Amore Homes properties and team members?",
+    answer: "Yes, they can.",
+  },
+  {
+    id: 13,
+    question: "What makes Amore Homes' properties environmentally sustainable?",
+    answer:
+      "Our residences are designed to be energy efficient, thus reducing carbon footprint.",
+  },
+  {
+    id: 14,
+    question:
+      "How does Amore Homes use technology to improve the living experience for its residents?",
+    answer:
+      "Key building services such as HVAC, lighting and control switches are automated. Also, we have been able to integrate solar power systems such as solar powered water heaters, solar street lamps as well as backup Inverter System in our projects.",
+  },
+  {
+    id: 15,
+    question:
+      "What is the process for designing and constructing an Amore Homes property?",
+    answer:
+      "Our design and construction processes are in conformity with guidelines and procedures stipulated by statutory and regulatory bodies of the locality.",
+  },
+  {
+    id: 16,
+    question:
+      "What are the benefits of communal living, and how does Amore Homes foster a sense of community among its residents?",
+    answer:
+      "Communal living has numerous benefits to both the individual and community as it promotes mutual support, understanding and mental wellness which is fostered through efficient space management.",
+  },
+  {
+    id: 17,
+    question:
+      "What sets Amore Homes apart from other real estate development companies?",
+    answer:
+      "Our products guarantee maximum communal and luxurious living experience as well as estate facilities such as recreational area, central gas system, fibre optics, solar street lamps, club house we offer to our teeming client’s.",
+  },
+  {
+    id: 18,
+    question:
+      "How does Amore Homes prioritize the well-being of its residents, and what amenities does it offer to promote a healthy lifestyle?",
+    answer:
+      "By delivering standardized products to our residents and our amenities range from recreational amenities, fibre optics, smart solar power systems to centralized LPG system.",
+  },
+  {
+    id: 19,
+    question:
+      "What is Amore Homes' vision for the future of sustainable living, and how does it plan to achieve that vision?",
+    answer:
+      "Our vision for sustainable living is to provide the best communal living experience by fostering family friendly lifestyle.",
+  },
+  {
+    id: 20,
+    question:
+      "How does Amore Homes work with local communities to ensure that its developments are a positive addition to the area?",
+    answer: "By extending our CSR outreach to the community.",
+  },
+  {
+    id: 21,
+    question:
+      "What kind of financial options are available for individuals interested in purchasing an Amore Homes property?",
+    answer: "We offer outright purchase and an 18months payment plan.",
+  },
+  {
+    id: 22,
+    question:
+      "How has Amore Homes adapted to changes in the real estate market, and what is its strategy for continued success?",
+    answer:
+      "We’ve adapted to changes in the real estate market by studying market trend and statistics to stay ahead of the curve. Our strategy for continuous success is not limited to; honing our brand identity, consistently market our products, productive collaborations, priotize staff training and cultivate an aftercare program.",
+  },
+]
