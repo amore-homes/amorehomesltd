@@ -1,9 +1,10 @@
 "use client"
+import AboutUsFAQs from "@/components/FAQs/about-us"
 import { PersonIcon } from "@/components/SVGs"
 import MissionIcon from "@/components/lottie/mission"
 import ValuesIcon from "@/components/lottie/values"
 import VisionIcon from "@/components/lottie/vision"
-import { Avatar, Box, Button, Grid, Typography } from "@mui/material"
+import { Avatar, Box, Button, Divider, Grid, Typography } from "@mui/material"
 
 const people = [
   {
@@ -129,9 +130,10 @@ export default function AboutUsPage() {
               </div>
             </Box>
           </Box>
+          {/* Mission and vision */}
           <Box
             component="div"
-            className="w-full flex flex-col gap-5 md:gap-10 mt-10 sm:mt-5"
+            className="w-full flex flex-col gap-5 md:gap-10 py-5 sm:py-5"
           >
             <Typography
               variant="h2"
@@ -239,6 +241,20 @@ export default function AboutUsPage() {
                 </Box>
               </Box>
             </Box>
+          </Box>
+          {/* *** FAQs *** */}
+          <Box
+            component="div"
+            className="w-full flex flex-col gap-5 md:gap-10 pb-5 sm:py-5"
+          >
+            <Typography
+              variant="h2"
+              className="text-[#041658] font-normal font-primary text-[35px]/[35.07px] lg:text-[43px]/[60.07px] xl:text-[48px]/[52.73px] text-center md:text-left"
+            >
+              More Information
+            </Typography>
+
+            <AboutUsFAQs />
           </Box>
         </Box>
       </Box>
