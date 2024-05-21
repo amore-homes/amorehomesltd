@@ -211,7 +211,7 @@ export default function CareerPage() {
                       <Link href="mailto:info@amorehomesltd.com">
                         <Button
                           endIcon={<ThinArrowForward />}
-                          className="text-white text-[20px]/[30.32px] font-normal font-jetBrain text-left normal-case hover:text-primary hover:scale-105 cursor-pointer"
+                          className="text-white text-[20px]/[30.32px] font-bold font-primary text-left normal-case hover:text-primary hover:scale-105 cursor-pointer"
                         >
                           Apply
                         </Button>
