@@ -92,7 +92,7 @@ export function PeopleIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_101_237)">
+      <g clipPath="url(#clip0_101_237)">
         <path
           d="M22.0138 20.4514C22.0138 19.5486 21.8749 19.3056 20.9027 19.2361C20.7291 19.2361 20.6249 19.0972 20.6249 18.9236V18.4722C20.6249 18.3681 20.6944 18.2292 20.7985 18.1945C22.0138 17.3611 22.8124 15.9722 22.8124 14.4097L22.8471 14.2014C22.8819 14.0625 22.986 13.9583 23.1249 13.9236C23.5416 13.8195 23.8541 13.5417 23.9583 13.125C24.0624 12.5347 23.6805 12.0139 23.1249 11.9097C23.0208 11.875 22.986 11.8056 22.986 11.7014L23.1249 9.89585C23.1596 2.88196 13.0555 2.77779 12.986 9.75696L13.1596 11.7361C13.1596 11.8056 13.1249 11.875 13.0555 11.9097C12.6041 12.0833 12.2916 12.6042 12.4305 13.125C12.5346 13.507 12.8819 13.75 13.2985 13.8542C13.4721 13.8889 13.5763 14.0278 13.5763 14.2014V14.375C13.5763 15.9722 14.4096 17.3959 15.6596 18.2292C15.7291 18.2639 15.7291 18.3334 15.7291 18.3681V18.9236C15.7291 19.0625 15.6249 19.2014 15.4513 19.2014C14.4096 19.2709 14.3055 19.5139 14.2708 20.382C14.236 20.4514 14.236 20.4861 14.2013 20.5209C12.4999 21.25 11.2499 22.257 11.2846 24.7222C11.2846 24.8611 11.4235 25 11.5624 25H24.7221C24.861 25 24.9999 24.8958 24.9999 24.7222C25.0346 22.257 23.8541 21.3195 22.118 20.5903C22.0833 20.5209 22.0485 20.4861 22.0138 20.4514Z"
           fill="#2B3B47"
@@ -255,7 +255,7 @@ export function AngleForward() {
   )
 }
 
-export function CloseIcon() {
+export function CloseIcon(props: any) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -263,6 +263,7 @@ export function CloseIcon() {
       height="32"
       viewBox="0 0 32 32"
       fill="none"
+      style={props.style}
     >
       <path
         d="M9.01074 22.9907L16.0014 16L22.9921 22.9907M22.9921 9.00933L16.0001 16L9.01074 9.00933"
@@ -301,7 +302,7 @@ export function ArrowForward(props: any) {
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -356,9 +357,9 @@ export function ArrowBackward(props: any) {
           width="28.2812"
           height="51.0039"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

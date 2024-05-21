@@ -29,6 +29,7 @@ import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
 import React from "react"
 import "./globals.css"
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
 export const Fonts = {
   primary: `Marcellus, sans-serif`,
@@ -249,230 +250,242 @@ export default function HomePageLayoutWrapper({
       </Box>
     </div>
   )
+  const recaptchaKey: string | undefined =
+    process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
   return (
-    <div className="w-full overflow-hidden relative" ref={ref}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        className="w-full h-[68px] shadow-none px-2 md:px-[40px] xxl:px-[96px] py-2"
-        sx={{
-          zIndex: (theme) => (mobileOpen ? 1 : theme.zIndex.drawer + 1),
-          background: scrolling
-            ? "white"
-            : pathname !== "/"
-            ? "white"
-            : "transparent",
-        }}
-      >
-        <Toolbar className="w-full justify-between py-2 px-0">
-          <Link
-            underline="none"
-            href="/"
-            className="hidden lg:flex cursor-pointer"
-          >
-            <div
-              className={
-                pathname === "/"
-                  ? `w-[100px] xl:w-[220px] xxl:w-[300px] font-primary font-normal ${
-                      scrolling ? "text-primary-text" : "text-white"
-                    } text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[23px]/[28.84px] text-left uppercase underline decoration-[7px] cursor-pointer hover:text-primary`
-                  : `w-[100px] xl:w-[220px] xxl:w-[300px] font-primary font-normal ${
-                      scrolling
-                        ? "text-primary-text"
-                        : pathname !== "/"
-                        ? "text-primary-text"
-                        : "text-white"
-                    } text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[23px]/[28.84px] text-left uppercase cursor-pointer hover:text-primary`
-              }
-            >
-              Home
-            </div>
-          </Link>
-          <Link underline="none" href="/" className="flex lg:hidden">
-            <Image src="/images/logo.svg" width={50} height={50} alt="logo" />
-          </Link>
-          <StyledList disablePadding className="hidden lg:flex max-w-[1100px]">
-            {menu?.map((item, index) => {
-              let itemName = updateKey(item.name.toLowerCase())
-              const selected =
-                pathname.startsWith(`/${itemName}`) ||
-                (pathname === "/" && item.name.toLowerCase() === "home")
-
-              return (
-                <ListItemButton
-                  disableRipple
-                  disableTouchRipple
-                  disableGutters
-                  key={index}
-                  onClick={() => handleClick(item, index)}
-                  className={
-                    selected
-                      ? `w-auto ont-primary font-normal text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[19px]/[23.82px] text-left ${
-                          pathname !== "/" ? "text-primary-text" : "text-white"
-                        } underline decoration-[7px] uppercase cursor-pointer hover:text-primary`
-                      : ` w-auto font-primary font-normal text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[19px]/[23.82px] text-left ${
-                          scrolling
-                            ? "text-primary-text"
-                            : pathname !== "/"
-                            ? "text-primary-text"
-                            : "text-white"
-                        } uppercase cursor-pointer hover:text-primary`
-                  }
-                >
-                  {item.name}
-                </ListItemButton>
-              )
-            })}
-          </StyledList>
-
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            className="flex lg:hidden bg-transparent text-primary-text hover:bg-transparent hover:text-primary"
-          >
-            <MenuIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-      <Box component="nav" sx={{ width: "100%", flexShrink: { md: 0 } }}>
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          anchor="right"
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
+    <GoogleReCaptchaProvider reCaptchaKey={recaptchaKey ?? "NOT DEFINED"}>
+      <div className="w-full overflow-hidden relative" ref={ref}>
+        <CssBaseline />
+        <AppBar
+          position="fixed"
+          className="w-full h-[68px] shadow-none px-2 md:px-[40px] xxl:px-[96px] py-2"
           sx={{
-            display: { xs: "flex", md: "none" },
-            "& .MuiDrawer-paper": {
-              backgroundColor: "#0D216D",
-              boxSizing: "border-box",
-              width: 240,
-              "&::-webkit-scrollbar": {
-                width: "0.1px !important",
-                height: "0.1px !important",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                backgroundColor: `#B59363 !important`,
-                borderRadius: "30px !important",
-                boxShadow: `inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),inset -2px -2px 2px rgba(0, 0, 0, 0.25) !important`,
-              },
-              "&::-webkit-scrollbar-track": {
-                backgroundColor: `#D9D9D9 !important`,
-              },
-            },
+            zIndex: (theme) => (mobileOpen ? 1 : theme.zIndex.drawer + 1),
+            background: scrolling
+              ? "white"
+              : pathname !== "/"
+              ? "white"
+              : "transparent",
           }}
         >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Box component="main" className="w-full grow">
-        <CssBaseline />
-        {children}
-      </Box>
-      <Box
-        component="footer"
-        className="w-full h-full xl:h-[400px] flex flex-col py-[30px] relative gap-8 overflow-hidden"
-        data-aos="fade-up"
-      >
-        <Box
-          component="div"
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: -1,
-            boxShadow: "49px 4px 7px 0px #00000040",
-            backgroundColor: "#0B0E4BB0",
-            backgroundImage: {
-              xs: `linear-gradient(rgba(11, 14, 75, 0.69), rgba(11, 14, 75, 0.69)),url("/images/footer-image.jpeg")`,
-              md: `linear-gradient(rgba(4, 22, 88, 0.6), rgba(4, 22, 88, 0.6)),url("/images/footer-image.jpeg")`,
-            },
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        ></Box>
-        <Box className="w-full text-white text-center text-[30px]/[36px]  lg:text-[53px]/[66px] font-normal font-primary">
-          More Information:
+          <Toolbar className="w-full justify-between py-2 px-0">
+            <Link
+              underline="none"
+              href="/"
+              className="hidden lg:flex cursor-pointer"
+            >
+              <div
+                className={
+                  pathname === "/"
+                    ? `w-[100px] xl:w-[220px] xxl:w-[300px] font-primary font-normal ${
+                        scrolling ? "text-primary-text" : "text-white"
+                      } text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[23px]/[28.84px] text-left uppercase underline decoration-[7px] cursor-pointer hover:text-primary`
+                    : `w-[100px] xl:w-[220px] xxl:w-[300px] font-primary font-normal ${
+                        scrolling
+                          ? "text-primary-text"
+                          : pathname !== "/"
+                          ? "text-primary-text"
+                          : "text-white"
+                      } text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[23px]/[28.84px] text-left uppercase cursor-pointer hover:text-primary`
+                }
+              >
+                Home
+              </div>
+            </Link>
+            <Link underline="none" href="/" className="flex lg:hidden">
+              <Image src="/images/logo.svg" width={50} height={50} alt="logo" />
+            </Link>
+            <StyledList
+              disablePadding
+              className="hidden lg:flex max-w-[1100px]"
+            >
+              {menu?.map((item, index) => {
+                let itemName = updateKey(item.name.toLowerCase())
+                const selected =
+                  pathname.startsWith(`/${itemName}`) ||
+                  (pathname === "/" && item.name.toLowerCase() === "home")
+
+                return (
+                  <ListItemButton
+                    disableRipple
+                    disableTouchRipple
+                    disableGutters
+                    key={index}
+                    onClick={() => handleClick(item, index)}
+                    className={
+                      selected
+                        ? `w-auto ont-primary font-normal text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[19px]/[23.82px] text-left ${
+                            pathname !== "/"
+                              ? "text-primary-text"
+                              : "text-white"
+                          } underline decoration-[7px] uppercase cursor-pointer hover:text-primary`
+                        : ` w-auto font-primary font-normal text-[14px]/[22px] xl:text-[16px]/[24px] xxl:text-[19px]/[23.82px] text-left ${
+                            scrolling
+                              ? "text-primary-text"
+                              : pathname !== "/"
+                              ? "text-primary-text"
+                              : "text-white"
+                          } uppercase cursor-pointer hover:text-primary`
+                    }
+                  >
+                    {item.name}
+                  </ListItemButton>
+                )
+              })}
+            </StyledList>
+
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              className="flex lg:hidden bg-transparent text-primary-text hover:bg-transparent hover:text-primary"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <Box component="nav" sx={{ width: "100%", flexShrink: { md: 0 } }}>
+          <Drawer
+            variant="temporary"
+            open={mobileOpen}
+            anchor="right"
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true,
+            }}
+            sx={{
+              display: { xs: "flex", md: "none" },
+              "& .MuiDrawer-paper": {
+                backgroundColor: "#0D216D",
+                boxSizing: "border-box",
+                width: 240,
+                "&::-webkit-scrollbar": {
+                  width: "0.1px !important",
+                  height: "0.1px !important",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: `#B59363 !important`,
+                  borderRadius: "30px !important",
+                  boxShadow: `inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),inset -2px -2px 2px rgba(0, 0, 0, 0.25) !important`,
+                },
+                "&::-webkit-scrollbar-track": {
+                  backgroundColor: `#D9D9D9 !important`,
+                },
+              },
+            }}
+          >
+            {drawer}
+          </Drawer>
+        </Box>
+        <Box component="main" className="w-full grow">
+          <CssBaseline />
+          {children}
         </Box>
         <Box
-          component="div"
-          className="w-full flex flex-col lg:flex-row justify-center items-center"
+          component="footer"
+          className="w-full h-full xl:h-[400px] flex flex-col py-[30px] relative gap-8 overflow-hidden"
+          data-aos="fade-up"
         >
           <Box
             component="div"
-            className="w-full max-w-[1280px] flex flex-col lg:flex-row gap-4 lg:gap-8 xxl:gap-10"
+            sx={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: -1,
+              boxShadow: "49px 4px 7px 0px #00000040",
+              backgroundColor: "#0B0E4BB0",
+              backgroundImage: {
+                xs: `linear-gradient(rgba(11, 14, 75, 0.69), rgba(11, 14, 75, 0.69)),url("/images/footer-image.jpeg")`,
+                md: `linear-gradient(rgba(4, 22, 88, 0.6), rgba(4, 22, 88, 0.6)),url("/images/footer-image.jpeg")`,
+              },
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></Box>
+          <Box className="w-full text-white text-center text-[30px]/[36px]  lg:text-[53px]/[66px] font-normal font-primary">
+            More Information:
+          </Box>
+          <Box
+            component="div"
+            className="w-full flex flex-col lg:flex-row justify-center items-center"
           >
-            <Box className="w-full md:w-1/2 flex gap-4 px-4">
-              <LocationIcon style={{ width: 90, height: 90 }} />
-              <Typography className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
-                Ngozi Okonjo-Iweala Way, Utako, Federal Capital Territory,
-                Nigeria
-              </Typography>
+            <Box
+              component="div"
+              className="w-full max-w-[1280px] flex flex-col lg:flex-row gap-4 lg:gap-8 xxl:gap-10"
+            >
+              <Box className="w-full md:w-1/2 flex gap-4 px-4">
+                <LocationIcon style={{ width: 90, height: 90 }} />
+                <Typography className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
+                  Ngozi Okonjo-Iweala Way, Utako, Federal Capital Territory,
+                  Nigeria
+                </Typography>
+              </Box>
+              <Divider
+                sx={{
+                  borderColor: "#FFFFFF",
+                  borderWidth: { xs: 0.5, md: "4px" },
+                }}
+              />
+              <Box className="w-full md:w-1/2 flex gap-4 px-4">
+                <MobilePhone style={{ width: 90, height: 90 }} />
+                <Link
+                  href="tel: +2347003000400"
+                  className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]"
+                >
+                  Call +2347003000400 For Information about Virtual tours
+                </Link>
+              </Box>
             </Box>
-            <Divider
-              sx={{
-                borderColor: "#FFFFFF",
-                borderWidth: { xs: 0.5, md: "4px" },
-              }}
-            />
-            <Box className="w-full md:w-1/2 flex gap-4 px-4">
-              <MobilePhone style={{ width: 90, height: 90 }} />
-              <Typography className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
-                Call +234 000 000 000 For Information about Virtual tours
-              </Typography>
+          </Box>
+          <Box className="w-full bg-[#001252E0]">
+            <Box className="w-full flex flex-row gap-4 lg:gap-8 xxl:gap-10 justify-between px-8 py-2">
+              <Box className="w-full flex flex-col gap-1 md:gap-2">
+                <Typography className="text-white text-[13.2px]/[20px] lg:text-[26px]/[33.86px] font-normal font-primary">
+                  Copyright © All Rights Reserved Amore Homes, {year}
+                </Typography>
+                <Link
+                  href="/terms-and-conditions"
+                  underline="always"
+                  className="text-[#94CDD5] text-[16px]/[24px] md:text-[20px]/[25.08px] font-normal font-primary normal-case"
+                >
+                  Terms and Conditions
+                </Link>
+              </Box>
+              <Box className="flex gap-4 items-center">
+                <Link
+                  underline="none"
+                  href="https://www.twitter.com/amore_homes/"
+                  target="_blank"
+                  className="text-white hover:text-primary hover:scale-110 cursor-pointer"
+                >
+                  <TwitterIcon />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/amore_homes/"
+                  target="_blank"
+                  className="text-white hover:text-primary hover:scale-110 cursor-pointer"
+                >
+                  <InstagramIcon />
+                </Link>
+                <Link
+                  href="https://web.facebook.com/AmoreHomesltd/?_rdc=1&_rdr"
+                  target="_blank"
+                  className="text-white hover:text-primary hover:scale-110 cursor-pointer"
+                >
+                  <FacebookIcon />
+                </Link>
+              </Box>
             </Box>
           </Box>
         </Box>
-        <Box className="w-full bg-[#001252E0]">
-          <Box className="w-full flex flex-row gap-4 lg:gap-8 xxl:gap-10 justify-between px-8 py-2">
-            <Box className="w-full flex flex-col gap-1 md:gap-2">
-              <Typography className="text-white text-[13.2px]/[20px] lg:text-[26px]/[33.86px] font-normal font-primary">
-                Copyright © All Rights Reserved Amore Homes, {year}
-              </Typography>
-              <Link
-                href="/terms-and-conditions"
-                underline="always"
-                className="text-[#94CDD5] text-[16px]/[24px] md:text-[20px]/[25.08px] font-normal font-primary normal-case"
-              >
-                Terms and Conditions
-              </Link>
-            </Box>
-            <Box className="flex gap-4 items-center">
-              <Link
-                underline="none"
-                href="https://www.twitter.com/amore_homes/"
-                target="_blank"
-                className="text-white hover:text-primary hover:scale-110 cursor-pointer"
-              >
-                <TwitterIcon />
-              </Link>
-              <Link
-                href="https://www.instagram.com/amore_homes/"
-                target="_blank"
-                className="text-white hover:text-primary hover:scale-110 cursor-pointer"
-              >
-                <InstagramIcon />
-              </Link>
-              <Link
-                href="https://web.facebook.com/AmoreHomesltd/?_rdc=1&_rdr"
-                target="_blank"
-                className="text-white hover:text-primary hover:scale-110 cursor-pointer"
-              >
-                <FacebookIcon />
-              </Link>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-    </div>
+      </div>
+    </GoogleReCaptchaProvider>
   )
 }

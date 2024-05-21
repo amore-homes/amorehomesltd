@@ -1,5 +1,5 @@
 "use client"
-import { Box, Grid, Typography } from "@mui/material"
+import { Box, Grid, IconButton, Typography } from "@mui/material"
 import Image from "next/image"
 import React from "react"
 import { useForm } from "react-hook-form"
@@ -8,14 +8,18 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { CustomTextField, TextArea } from "../Inputs"
 import { SubmitButton } from "../Inputs/button"
 import Link from "next/link"
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import { CloseIcon } from "../SVGs"
+import axios from "axios"
 
 export default function ContactUsSection() {
   const [loading, setLoading] = React.useState<boolean>(false)
   const [success, setSuccess] = React.useState<boolean>(false)
   const [error, setError] = React.useState<boolean>(false)
   const [message, setMessage] = React.useState<string>("")
-  const [lat, setLat] = React.useState(9.07259)
-  const [lng, setLng] = React.useState(7.44677)
+  const lat = 9.07259
+  const lng = 7.44677
+  const { executeRecaptcha } = useGoogleReCaptcha()
 
   // form validation rules
   const validationSchema = Yup.object().shape({
@@ -37,34 +41,68 @@ export default function ContactUsSection() {
   })
 
   async function onSubmit(data: any) {
+    setLoading(true)
+    if (!executeRecaptcha) {
+      setError(true)
+      setLoading(false)
+      setMessage("No recaptcha available")
+      setTimeout(() => {
+        setError(false)
+        setMessage("")
+      }, 3200)
+      return
+    }
+    const gRecaptchaToken = await executeRecaptcha("inqurySubmit")
     const inputs = {
-      id: 2,
       name: `${data.firstname} ${data.lastname}`,
       email: data.email,
       phone: data.phone,
       message: data.message,
     }
-    setLoading(true)
-    try {
-      const res = await fetch("http://localhost:5001/contact-us", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputs),
-      })
-      if (res) {
+
+    const response = await axios({
+      method: "post",
+      url: "/api/recaptchaSubmit",
+      data: {
+        gRecaptchaToken,
+      },
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    })
+    if (response.data?.success === true) {
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(inputs),
+        })
+        if (res) {
+          setLoading(false)
+          setSuccess(true)
+          setMessage("Messsage sent successfully")
+          setTimeout(() => {
+            setSuccess(false)
+            setMessage("")
+            reset()
+          }, 3200)
+        }
+      } catch (error: any) {
         setLoading(false)
-        setSuccess(true)
-        setMessage("Messsage sent successfully")
-        console.log("RESPONSE:", res)
-        reset()
+        setError(true)
+        setMessage(error)
       }
-    } catch (error: any) {
+    } else {
       setLoading(false)
       setError(true)
-      setMessage(error)
-      console.log("ERROR:", error)
+      setMessage("Failed to verify recaptcha")
+      setTimeout(() => {
+        setError(false)
+        setMessage("")
+      }, 3200)
     }
   }
   return (
@@ -72,8 +110,7 @@ export default function ContactUsSection() {
       <div className="w-full flex flex-col lg:flex-row gap-2 lg:gap-6">
         <Box
           className="w-full lg:w-1/2 flex flex-col gap-6"
-          data-aos="fade-up-right"
-          data-aos-once={true}
+          data-aos="fade-right"
         >
           <Box className="w-full flex flex-col">
             <Typography
@@ -97,6 +134,62 @@ export default function ContactUsSection() {
             className="w-full max-w-[708px] flex my-4"
           >
             <Grid container spacing={2}>
+              <Grid item xs={12}>
+                {error && (
+                  <div
+                    className="w-full max-w-[300px] mx-auto bg-white border border-white pl-4 pr-1 pt-1 pb-4 flex flex-col justify-between relative gap-1"
+                    style={{
+                      borderLeft: "4px solid #ff3333",
+                      boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+                    }}
+                  >
+                    <div className="flex justify-between items-center">
+                      <Typography className="font-bold font-primary text-lg text-[#ff3333]">
+                        Error
+                      </Typography>
+                      <IconButton
+                        className=" cursor-pointer"
+                        onClick={() => {
+                          setSuccess(false)
+                          setMessage("")
+                        }}
+                      >
+                        <CloseIcon style={{ width: 25, height: 25 }} />
+                      </IconButton>
+                    </div>
+                    <Typography className="font-normal font-primary text-sm text-[#ff3333]">
+                      {message}
+                    </Typography>
+                  </div>
+                )}
+                {success && (
+                  <div
+                    className="w-full max-w-[300px] mx-auto bg-white border-l-4 border-[#5cb85c] pl-4 pr-1 pt-1 pb-4 flex flex-col justify-between relative gap-1"
+                    style={{
+                      borderLeft: "4px solid #5cb85c",
+                      boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+                    }}
+                  >
+                    <div className="flex justify-between items-center">
+                      <Typography className="font-bold font-primary text-lg text-[#5cb85c]">
+                        Success
+                      </Typography>
+                      <IconButton
+                        className=" cursor-pointer"
+                        onClick={() => {
+                          setSuccess(false)
+                          setMessage("")
+                        }}
+                      >
+                        <CloseIcon style={{ width: 25, height: 25 }} />
+                      </IconButton>
+                    </div>
+                    <Typography className="font-normal font-primary text-sm text-[#5cb85c]">
+                      {message}
+                    </Typography>
+                  </div>
+                )}
+              </Grid>
               <Grid item xs={12} sm={6}>
                 <CustomTextField
                   name="firstname"

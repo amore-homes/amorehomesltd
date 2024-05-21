@@ -4,44 +4,50 @@ import { PersonIcon } from "@/components/SVGs"
 import MissionIcon from "@/components/lottie/mission"
 import ValuesIcon from "@/components/lottie/values"
 import VisionIcon from "@/components/lottie/vision"
-import { Avatar, Box, Button, Divider, Grid, Typography } from "@mui/material"
+import { Avatar, Box, Grid, Typography } from "@mui/material"
 
 const people = [
   {
     id: 1,
-    name: "Musa Ahmadu",
-    role: "Executive director",
-    picture: "",
+    name: "Engr. Shehu Abubakar Sani",
+    role: "Chief Executive Officer",
+    picture: "/images/amorehomes-ceo.jpeg",
   },
   {
     id: 2,
-    name: "Kelechi Moses",
-    role: "Architect",
-    picture: "",
+    name: "Lawal Sa’adatu Kuki Esq.",
+    role: "Manager Finance &Admin",
+    picture: "/images/amore-md-finance.jpeg",
   },
   {
     id: 3,
-    name: "Muhammed Isa",
-    role: "Auctioneer",
-    picture: "",
+    name: "Ridwan Abdulrahman",
+    role: "Contract and Procurement Officer",
+    picture: "/images/amorehomes-C&P.jpeg",
   },
   {
     id: 4,
-    name: "Abdullahi Garba",
-    role: "Director",
-    picture: "",
+    name: "Muhammed Hayatu Yunusa",
+    role: "Project Manager",
+    picture: "/images/amore-homes-PM.jpeg",
   },
   {
     id: 5,
-    name: "Kate Middleton",
-    role: "Human Resource manager",
-    picture: "",
+    name: "Muhammad Awwal Shafiu",
+    role: "Project Architect",
+    picture: "/images/amorehomes-PA.jpeg",
   },
   {
     id: 6,
-    name: "Frank Mba",
-    role: "Real Estate Agent",
-    picture: "",
+    name: "Muazu Umar Idris",
+    role: "Project manager",
+    picture: "/images/amore-PM.jpeg",
+  },
+  {
+    id: 7,
+    name: "George Jane Telema",
+    role: "Investment Advisor",
+    picture: "/images/Amore-IA.jpeg",
   },
 ]
 
@@ -52,7 +58,7 @@ export default function AboutUsPage() {
         component="section"
         className="w-fullh-full flex flex-col justify-start items-start pb-8 pt-[80px] px-4 lg:mt-0 md:py-[60px] relative gap-8 overflow-hidden"
       >
-        <Box className="w-full max-w-[1440px] flex flex-col pb-4 pt-[40px] md:py-[40px] xl:py-[60px]  px-4 lg:px-[30px] xl:px-[40px] xxl:px-[96px] relative gap-10">
+        <Box className="w-full max-w-[1500px] flex flex-col pb-4 pt-[40px] md:py-[40px] xl:py-[60px] px-2 lg:px-[30px] xl:px-[40px] xxl:px-[96px] relative gap-10">
           <Typography
             variant="h1"
             className="w-full flex flex-col gap-2 text-[#041658] text-[37px]/[46.39px] text-center md:text-left font-normal font-primary uppercase"
@@ -61,7 +67,7 @@ export default function AboutUsPage() {
             Amore Homes
             <Typography
               variant="caption"
-              className="font-primary font-normal text-center md:text-left text-primary text-[34px]/[30.25px] md:text-[64px]/[50.25px] uppercase pl-8"
+              className="font-primary font-normal text-center md:text-left text-primary text-[30px]/[30.25px] md:text-[60px]/[50.25px] uppercase pl-8"
               data-aos="fade-left"
             >
               The Team
@@ -69,16 +75,13 @@ export default function AboutUsPage() {
           </Typography>
           <Typography
             variant="h2"
-            className="text-[#041658] font-normal font-primary text-[25px]/[30.07px] lg:text-[43px]/[60.07px] xl:text-[48px]/[52.73px] text-center md:text-left"
+            className="text-[#041658] font-normal font-primary text-[25px]/[30.07px] lg:text-[43px]/[60.07px] xl:text-[40px]/[52.73px] text-center md:text-left"
             data-aos="fade-up"
           >
             Meet Our Team of Experts
           </Typography>
-          <Box className="w-full flex flex-col md:flex-row gap-4">
-            <Box
-              className="w-full md:w-1/2 flex flex-col gap-10"
-              data-aos="zoom-in"
-            >
+          <Box className="w-full flex flex-col lg:flex-row gap-6">
+            <Box className="w-full lg:w-1/2 flex" data-aos="zoom-in">
               <Grid container columnSpacing={5} rowSpacing={3}>
                 {people?.map(
                   (
@@ -94,17 +97,17 @@ export default function AboutUsPage() {
                       <Grid key={index} item xs={6} sm={4}>
                         <Box className="w-full flex flex-col gap-2">
                           <Avatar
-                            src=""
+                            src={person.picture}
                             alt={`${person.name} picture`}
                             className="w-[150px] h-[150px] bg-[#041658]"
                           >
                             <PersonIcon />
                           </Avatar>
                           <Box className="w-full flex flex-col">
-                            <Typography className="text-[#000000] text-[18px]/[24px] md:text-[20px]/[26.63px] font-normal font-primary text-center">
+                            <Typography className="text-[#000000] text-[18px]/[24px] md:text-[16px]/[26px] font-normal font-primary text-center">
                               {person.name}
                             </Typography>
-                            <Typography className="text-[#041658] text-[15.2px]/[22.33px] md:text-[18px]/[24.33px] font-normal font-primary text-center">
+                            <Typography className="text-[#041658] text-[15.2px]/[22.33px] md:text-[14px]/[24px] font-normal font-primary text-center">
                               {person.role}
                             </Typography>
                           </Box>
@@ -115,25 +118,22 @@ export default function AboutUsPage() {
                 )}
               </Grid>
             </Box>
-
             <Box
-              className="w-full md:w-1/2 flex justify-center items-center"
+              className="relative w-full lg:w-1/2 flex  px-12 xxl:px-[100px]"
               data-aos="fade-left"
             >
-              <div className="w-full md:w-1/2 h-full relative flex">
-                <iframe
-                  className="inset-0 w-full h-full  xl:h-[320px] xxl:h-[395px] md:w-[612px] xl:w-[380px] xxl:w-[671px] md:h-full rounded-2xl border-none m-0 md:p-0 aspect-video"
-                  src={`https://www.youtube.com/embed/_L6jEtMK8No?autoplay=0&color=white&fs=0&rel=0`}
-                  title="Wall street sense"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                ></iframe>
-              </div>
+              <iframe
+                className="inset-0 w-full h-full lg:h-[395px] lg:w-[415px] xl:w-[505px] xxl:w-[671px] rounded-2xl border-none m-0 md:p-0 aspect-video"
+                src={`https://www.youtube.com/embed/_L6jEtMK8No?autoplay=0&color=white&fs=0&rel=0`}
+                title="beautiful house"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
             </Box>
           </Box>
           {/* Mission and vision */}
           <Box
             component="div"
-            className="w-full flex flex-col gap-5 md:gap-10 py-5 sm:py-5"
+            className="w-full flex flex-col gap-5 xl:gap-10 py-5 sm:py-5"
           >
             <Typography
               variant="h2"
@@ -144,16 +144,16 @@ export default function AboutUsPage() {
 
             <Box
               component="div"
-              className="w-full flex flex-col md:flex-row pb-[40px] gap-8"
+              className="w-full flex flex-col lg:flex-row pb-[40px] gap-8"
             >
               <Box
-                className="w-full md:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 py-4 rounded-lg"
+                className="w-full xl:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 pb-4 sm:py-4  rounded-lg"
                 sx={{
                   boxShadow: "11px 17px 13px 0px #00000040",
                 }}
                 data-aos="fade-right"
               >
-                <Box className="w-full flex gap-2 items-center">
+                <Box className="w-full flex flex-col sm:flex-row sm:gap-2 justify-start items-center">
                   <MissionIcon />{" "}
                   <Typography
                     variant="h2"
@@ -169,13 +169,13 @@ export default function AboutUsPage() {
                 </Typography>
               </Box>
               <Box
-                className="w-full md:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 py-4 rounded-lg"
+                className="w-full xl:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 pb-4 sm:py-4  rounded-lg"
                 sx={{
                   boxShadow: "11px 17px 13px 0px #00000040",
                 }}
-                data-aos="fade-up"
+                data-aos="fade-right"
               >
-                <Box className="w-full flex gap-2 items-center">
+                <Box className="w-full flex flex-col sm:flex-row sm:gap-2 justify-start items-center">
                   <VisionIcon />
                   <Typography
                     variant="h2"
@@ -192,13 +192,13 @@ export default function AboutUsPage() {
               </Box>
 
               <Box
-                className="w-full md:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 py-4 rounded-lg"
+                className="w-full xl:w-1/3 border border-solid border-border flex flex-col gap-2 px-4 pb-4 sm:py-4 rounded-lg"
                 sx={{
                   boxShadow: "11px 17px 13px 0px #00000040",
                 }}
-                data-aos="fade-left"
+                data-aos="fade-right"
               >
-                <Box className="w-full flex gap-2 items-center">
+                <Box className="w-full flex flex-col sm:flex-row sm:gap-2 justify-start items-center">
                   <ValuesIcon />
                   <Typography
                     variant="h2"
@@ -249,7 +249,7 @@ export default function AboutUsPage() {
           >
             <Typography
               variant="h2"
-              className="text-[#041658] font-normal font-primary text-[35px]/[35.07px] lg:text-[43px]/[60.07px] xl:text-[48px]/[52.73px] text-center md:text-left"
+              className="text-[#041658] font-normal font-primary text-[35px]/[35.07px] lg:text-[43px]/[60.07px] xl:text-[40px]/[52.73px] text-center md:text-left pb-4 sm:pb-0"
             >
               More Information
             </Typography>

@@ -12,10 +12,39 @@ import React from "react"
 import { TailSpin } from "react-loader-spinner"
 
 export default function BlogPage() {
-  const [subscribe, setSubscribe] = React.useState("")
+  const [email, setEmail] = React.useState("")
   const [loading, setLoading] = React.useState(false)
+  const [success, setSuccess] = React.useState<boolean>(false)
+  const [error, setError] = React.useState<boolean>(false)
+  const [message, setMessage] = React.useState<string>("")
+
   const handleSubscribe = ({ target }: any) => {
-    setSubscribe(target.value)
+    setEmail(target.value)
+  }
+  async function handleSubmit(data: any) {
+    const inputs = {
+      email,
+    }
+    setLoading(true)
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputs),
+      })
+      if (res) {
+        setLoading(false)
+        setSuccess(true)
+        setMessage("Subscription sent successfully")
+      }
+    } catch (error: any) {
+      setLoading(false)
+      setError(true)
+      setMessage(error)
+      console.log("ERROR:", error)
+    }
   }
   return (
     <div className="w-full flex flex-col gap-[52px]">
@@ -25,15 +54,16 @@ export default function BlogPage() {
             id="subscribe"
             className={`relative w-full px-6 py-4 rounded-[42.5px] border border-solid border-[#00000080] bg-[#FFFFFF] justify-start items-center gap-3 flex font-inter text-xl/[24.6px] font-normal cursor-text text-[#101928] hover:border-primary focus:outline-none focus:border-primary disabled:bg-[#F5F5F5] disabled:hover:border-[#F5F5F5] disabled:cursor-not-allowed disabled:text-[#98A2B3] placeholder:text-[#B7B7B7]`}
             style={{ boxShadow: "0px 4px 4px 0px #00000040 inset" }}
-            value={subscribe}
-            type="text"
+            value={email}
+            type="email"
             placeholder="Enter your email"
-            name="subscribe"
+            name="email"
             onChange={handleSubscribe}
           />
           <Button
             className="absolute top-0 right-[-25px] sm:right-0 w-[110px] sm:w-[170px] h-[60px] rounded-[42.5px] border-[3px] border-solid border-[#FFFFFF80] text-white font-normal font-primary bg-[#041658] hover:bg-[#2b324b] cursor-pointer"
             sx={{ boxShadow: "0px 4px 44px 3px #00000040" }}
+            onClick={handleSubmit}
           >
             {loading ? (
               <TailSpin

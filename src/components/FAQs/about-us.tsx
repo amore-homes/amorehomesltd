@@ -86,13 +86,13 @@ export default function AboutUsFAQs() {
               >
                 <Typography
                   variant="caption"
-                  className="font-normal font-gordita text-lg/[21.6px] text-left text-[#041658]"
+                  className="font-normal font-primary text-lg/[21.6px] text-left text-[#041658]"
                 >
                   {`${index + 1}. ${faq.question}`}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography className="font-normal font-gordita text-[16px]/[21.6px] text-left text-[#041658] tracking-[0.18px]">
+                <Typography className="font-normal font-primary text-[16px]/[21.6px] text-left text-[#041658] tracking-[0.18px]">
                   {faq.answer}
                 </Typography>
               </AccordionDetails>
