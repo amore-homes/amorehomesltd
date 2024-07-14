@@ -7,12 +7,13 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-
+html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  color: #100808;
+}
+body {
   background: #ffffff;
 }
 
@@ -25,13 +26,6 @@ body {
   font-family: "Marcellus";
   src: url("/fonts/Marcellus-Regular.ttf");
   font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "JetBrain-extrabold";
-  src: url("/fonts/JetBrainsMono-ExtraBold.ttf");
-  font-weight: 800;
   font-display: swap;
   font-style: normal;
 }

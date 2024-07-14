@@ -39,7 +39,6 @@ const config: Config = {
 
     fontFamily: {
       primary: ["Marcellus", "sans-serif"],
-      jetBrain: ["JetBrain-extrabold", "sans-serif"],
     },
   },
   plugins: [],
