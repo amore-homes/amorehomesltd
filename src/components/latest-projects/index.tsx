@@ -22,7 +22,6 @@ export default async function LatestProjects() {
   const project4 = data?.find((item: any) => item.name === "Update-4")
   const project5 = data?.find((item: any) => item.name === "Update-5")
   const project6 = data?.find((item: any) => item.name === "Update-6")
-
   return (
     <section
       id="project-section"
