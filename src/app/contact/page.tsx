@@ -263,7 +263,7 @@ export default function ContactUsPage() {
           </Box>
         </div>
         <div
-          className="hidden lg:block w-full md:w-[780px] h-[780px] xl:h-[1000px] xxl:h-[1100.04px] my-24"
+          className="hidden lg:block w-full md:w-[680px] h-[780px] xl:h-[1000px] xxl:h-[1100.04px] my-24"
           id="map"
           data-aos="fade-up"
         >

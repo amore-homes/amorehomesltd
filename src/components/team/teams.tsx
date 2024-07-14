@@ -111,16 +111,18 @@ export default function OurTeamMembers({ data }: any) {
           })}
         </div>
       </Swiper>
-      <div className="rounded-lg bg-secondary h-[100px] w-full flex justify-beween items-center px-8">
-        <h4 className="w-full m-0 p-0 font-primary font-bold text-4xl/[34px] text-left text-white">
+      <div className="rounded-lg bg-secondary h-[180px] sm:h-[100px] w-full flex justify-center md:justify-beween items-center px-8 py-12 flex-col md:flex-row md:gap-0 gap-4">
+        <h4 className="w-full m-0 p-0 font-primary font-bold text-[24px]/[30px] md:text-4xl/[34px] text-left text-white">
           Want to be a member?
         </h4>
-        <Link
-          href="/careers"
-          className="w-[300px] h-[60px] font-bold font-primary text-center text-secondary text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[22px]/[32px] rounded-[10px] bg-primary flex justify-center items-center gap-1 capitalize px-4"
-        >
-          Apply now <ArrowUpIcon />
-        </Link>
+        <div className="w-full flex justify-end items-end">
+          <Link
+            href="/careers"
+            className="w-full sm:w-[260px] h-[60px] font-bold font-primary text-center text-secondary text-xl lg:text-[24px]/[32.11px] xl:text-[22px]/[32px] rounded-[10px] bg-primary flex justify-center items-center gap-1 capitalize px-4"
+          >
+            Apply now <ArrowUpIcon />
+          </Link>
+        </div>
       </div>
     </div>
   )

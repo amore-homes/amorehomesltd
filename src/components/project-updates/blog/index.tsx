@@ -42,7 +42,7 @@ export default function BlogPage({ shortStories, data }: any) {
                     quality={100}
                     className={`w-full xl:w-[${featuredStory?.[0].images.fields.file.details.image?.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
                   />
-                  <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-start bg-[#000000B2]">
+                  <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                     <p className="w-full text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                       {featuredStory?.[0]?.title}
                     </p>
@@ -73,7 +73,7 @@ export default function BlogPage({ shortStories, data }: any) {
                       quality={100}
                       className={`w-full h-full sm:h-[206px] sm:w-[${press.images.fields.file.details.image.width}px] relative rounded-[25px]`}
                     />
-                    <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-start bg-[#000000B2]">
+                    <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                       <p className="w-full max-w-[345px] text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                         {press.description}
                       </p>
@@ -135,13 +135,13 @@ export default function BlogPage({ shortStories, data }: any) {
                       className={`w-full h-full sm:h-[250px] sm:w-[${story.images.fields.file.details.image.width}px] relative rounded-[25px]`}
                     />
 
-                    <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-start bg-[#000000B2]">
+                    <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                       <p className="w-full max-w-[345px] text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                         {story.title}
                       </p>
                     </div>
                   </div>
-                  <p className="text-[#000000] font-primary font-normal text-[24px]/[30.09px] flex items-center justify-start mt-1">
+                  <p className="text-[#000000] font-primary font-normal text-[24px]/[30.09px] flex items-center justify-left mt-1">
                     {story.description}
                   </p>
                 </Link>
@@ -180,7 +180,7 @@ export default function BlogPage({ shortStories, data }: any) {
                         <PeopleIcon />
                       </div>
                     </div>
-                    <p className="text-[#000000] font-primary font-normal text-[24px]/[30.09px] text-justify ">
+                    <p className="text-[#000000] font-primary font-normal text-[22px]/[28px] text-left ">
                       {story.story}
                     </p>
                   </div>
@@ -207,7 +207,7 @@ export default function BlogPage({ shortStories, data }: any) {
                       quality={100}
                       className={`w-full h-full sm:h-[277px] sm:w-[704px] relative rounded-[25px]`}
                     />
-                    <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-start bg-[#000000B2]">
+                    <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                       <p className="w-full max-w-[345px] text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                         {story.title}
                       </p>

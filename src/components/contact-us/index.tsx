@@ -255,7 +255,7 @@ export default function ContactUsSection() {
           </Box>
         </Box>
         <div
-          className="hidden lg:block w-full md:w-[750px] h-[780px] xl:h-[1000px] xxl:h-[1100.04px] my-24"
+          className="hidden lg:block w-full md:w-[680px] h-[780px] xl:h-[1000px] xxl:h-[1100.04px] my-24"
           id="map"
           data-aos="fade-up"
         >

@@ -41,7 +41,7 @@ export default function HomePageHeroSearch() {
   }
   return (
     <div className="w-full flex justify-center items-center">
-      <div className="w-full hidden lg:flex max-w-[1344px] bg-white rounded-lg px-4 justify-center items-center">
+      <div className="w-full hidden lg:flex max-w-[1344px] bg-white rounded-lg justify-center items-center px-4 mx-8">
         <input
           name="search"
           type="search"

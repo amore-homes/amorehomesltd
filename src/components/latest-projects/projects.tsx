@@ -9,6 +9,7 @@ export default function Projects({ data }: any) {
   const project4 = data?.find((item: any) => item.name === "Update-4")
   const project5 = data?.find((item: any) => item.name === "Update-5")
   const project6 = data?.find((item: any) => item.name === "Update-6")
+  console.log("data", data)
   return (
     <div>
       {" "}
@@ -65,7 +66,7 @@ export default function Projects({ data }: any) {
                   width={project5?.image?.fields?.file?.details?.image?.width}
                   height={project5?.image?.fields?.file?.details?.image?.height}
                   quality={100}
-                  className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[346px] rounded-sm`}
+                  className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[${project6?.image?.fields?.file?.details?.image?.width}px] rounded-sm`}
                   loading="lazy"
                   data-aos="flip-right"
                 />
@@ -75,7 +76,7 @@ export default function Projects({ data }: any) {
                   width={project6?.image?.fields?.file?.details?.image?.width}
                   height={project6?.image?.fields?.file?.details?.image?.height}
                   quality={100}
-                  className={`w-[120px] sm:w-1/2 rounded-sm h-[150px] lg:h-[216px] lg:w-[180px] xl:w-[210px] xl:h-[210px] xxl:h-[460px] xxl:w-[328px]`}
+                  className={`w-[120px] sm:w-1/2 rounded-sm h-[150px] lg:h-[216px] lg:w-[180px] xl:w-[210px] xl:h-[210px] xxl:h-[460px] xxl:w-[${project6?.image?.fields?.file?.details?.image?.width}px]`}
                   loading="lazy"
                   data-aos="flip-right"
                 />
@@ -107,7 +108,7 @@ export default function Projects({ data }: any) {
           </div>
           <Link
             href="/our-communities"
-            className="w-full h-[50px] lg:h-[60px] xl:[70px] xxl:h-[80px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[28px]/[35.11px] rounded-[10px] bg-secondary mt-4 md:mt-10 flex justify-center items-center"
+            className="w-full h-[50px] lg:h-[60px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[28px]/[35.11px] rounded-[10px] bg-secondary mt-4 md:mt-10 flex justify-center items-center"
             data-aos="fade-left"
             data-aos-once={true}
           >

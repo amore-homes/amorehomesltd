@@ -14,7 +14,7 @@ function CustomTabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props
 
   return (
-    <div hidden={value !== index} {...other}>
+    <div className="w-full m-0 p-0" hidden={value !== index} {...other}>
       {value === index && children}
     </div>
   )
@@ -57,7 +57,7 @@ export default function ProjectUpdates({
   return (
     <div className="w-full min-h-screen relative flex flex-col">
       <SearchBlog handleSearch={handleSearch} search={search} />
-      <div className="w-full flex flex-col pb-4 px-4 lg:px-[30px] xl:px-[40px] xxl:px-[96px] relative gap-10">
+      <div className="w-full flex flex-col pb-4 px-0 lg:px-[30px] xl:px-[40px] xxl:px-[96px] relative gap-10">
         <h1
           className="w-full flex flex-col gap-2 text-secondary text-[37px]/[46.39px] text-center md:text-left font-normal font-primary uppercase m-0"
           data-aos="fade-up"

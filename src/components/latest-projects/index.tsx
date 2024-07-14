@@ -102,32 +102,40 @@ export default async function LatestProjects() {
                 loading="lazy"
                 data-aos="flip-left"
               />
-              <div className="w-full flex gap-1 md:gap-4">
-                <Image
-                  src={`https:${project5?.image?.fields?.file?.url}`}
-                  alt={project5?.title}
-                  width={project5?.image?.fields?.file?.details?.image?.width}
-                  height={project5?.image?.fields?.file?.details?.image?.height}
-                  quality={100}
-                  className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[250px] rounded-sm`}
-                  loading="lazy"
-                  data-aos="flip-right"
-                />
-                <Image
-                  src={`https:${project6?.image?.fields?.file?.url}`}
-                  alt={project6?.title}
-                  width={project6?.image?.fields?.file?.details?.image?.width}
-                  height={project6?.image?.fields?.file?.details?.image?.height}
-                  quality={100}
-                  className={`w-[120px] sm:w-1/2 rounded-sm h-[150px] lg:h-[216px] lg:w-[180px] xl:w-[210px] xl:h-[210px] xxl:h-[460px] xxl:w-[328px]`}
-                  loading="lazy"
-                  data-aos="flip-right"
-                />
+              <div className="w-full flex gap-1">
+                <div>
+                  <Image
+                    src={`https:${project5?.image?.fields?.file?.url}`}
+                    alt={project5?.title}
+                    width={project5?.image?.fields?.file?.details?.image?.width}
+                    height={
+                      project5?.image?.fields?.file?.details?.image?.height
+                    }
+                    quality={100}
+                    className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[328px] rounded-sm`}
+                    loading="lazy"
+                    data-aos="flip-right"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src={`https:${project6?.image?.fields?.file?.url}`}
+                    alt={project6?.title}
+                    width={project6?.image?.fields?.file?.details?.image?.width}
+                    height={
+                      project6?.image?.fields?.file?.details?.image?.height
+                    }
+                    quality={100}
+                    className={`w-[120px] sm:w-1/2 rounded-sm h-[150px] lg:h-[216px] lg:w-[180px] xl:w-[210px] xl:h-[210px] xxl:h-[460px] xxl:w-[328px]`}
+                    loading="lazy"
+                    data-aos="flip-right"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full max-w-[450px] xl:w-1/3 mt-8 flex flex-col gap-6 pl-8">
+        <div className="w-full md:w-[400px] mt-8 flex flex-col gap-6 md:pl-8">
           <div className="w-full relative px-8">
             <Divider
               orientation="horizontal"
@@ -151,14 +159,14 @@ export default async function LatestProjects() {
           </div>
           <Link
             href="/our-communities"
-            className="w-full h-[50px] lg:h-[60px] xl:[70px] xxl:h-[80px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[28px]/[35.11px] rounded-[10px] bg-secondary mt-4 md:mt-10 flex justify-center items-center"
+            className="w-full h-[60px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[26px]/[35.11px] rounded-[10px] bg-secondary mt-4 md:mt-8 flex justify-center items-center"
             data-aos="fade-left"
             data-aos-once={true}
           >
             View all properties
           </Link>
           <p
-            className="w-full px-2 font-primary font-normal text-[#000000] text-[18px]/[28px] lg:text-[26px]/[32.62px] xl:text-[28px]/[34px] text-left"
+            className="w-full px-2 font-primary font-normal text-[#000000] text-[18px]/[28px] lg:text-[22px]/[32.62px] xl:text-[24px]/[28px] text-left"
             data-aos="fade-up"
           >
             {projectDescription?.[0]?.description}

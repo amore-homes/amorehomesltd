@@ -111,10 +111,10 @@ export default function WhyChooseUs() {
                 </div>
               </div>
             </div>
-            <div className="flex gap-4 xxl:gap-8">
-              <div className="flex flex-col gap-6">
+            <div className="hidden xl:flex gap-4 xxl:gap-4">
+              <div className="flex flex-col gap-4">
                 <div
-                  className={`rounded-lg bg-secondary h-[180px] w-[350px] xl:w-[340px] xxl:w-[350px] flex justify-center items-center`}
+                  className={`rounded-lg bg-secondary h-[180px] w-[350px] xl:w-[320px] xxl:w-[350px] flex justify-center items-center`}
                 >
                   <div className="flex gap-6">
                     <BriefIcon className="w-[45px] h-[45px]" />
@@ -134,7 +134,7 @@ export default function WhyChooseUs() {
                   width={400}
                   height={478}
                   quality={100}
-                  className={`rounded-lg w-full h-[355px] lg:w-[260px] xl:w-[320px] lg:h-[400px] xl:h-[320px] xxl:h-[345px] xxl:w-[350px]`}
+                  className={`rounded-lg w-full h-[355px] lg:w-[260px] xl:w-[320px] lg:h-[400px] xl:h-[320px] xxl:h-[338px] xxl:w-[340px]`}
                   loading="lazy"
                 />
               </div>
@@ -144,7 +144,7 @@ export default function WhyChooseUs() {
                 width={460}
                 height={878}
                 quality={100}
-                className={`hidden md:block rounded-lg h-[355px] w-full md:w-[320px] lg:w-[260px] xl:w-[320px] md:h-[580px] lg:h-[400px] xl:h-[548px] xxl:h-[548px] xxl:w-[500px]`}
+                className={`hidden md:block rounded-lg h-[355px] w-full md:w-[320px] lg:w-[260px] xl:w-[320px] md:h-[580px] lg:h-[400px] xl:h-[528px] xxl:h-[548px] xxl:w-[480px]`}
                 loading="lazy"
               />
             </div>
