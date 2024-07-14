@@ -111,8 +111,8 @@ export default function OurTeamMembers({ data }: any) {
           })}
         </div>
       </Swiper>
-      <div className="rounded-lg bg-secondary h-[150px] w-full flex justify-beween items-center px-8">
-        <h4 className="w-full font-primary font-bold text-4xl/[34px] text-left text-white">
+      <div className="rounded-lg bg-secondary h-[100px] w-full flex justify-beween items-center px-8">
+        <h4 className="w-full m-0 p-0 font-primary font-bold text-4xl/[34px] text-left text-white">
           Want to be a member?
         </h4>
         <Link

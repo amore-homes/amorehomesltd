@@ -46,7 +46,7 @@ export default async function OurTeamSection() {
                   borderWidth: 2,
                   borderColor: "#B59363",
                   position: "absolute",
-                  left: { xs: 650, lg: 479 },
+                  left: { xs: 650, lg: 570 },
                   right: "auto",
                   top: { xs: 0, sm: 15, md: 35, lg: 30, xl: 40 },
                 }}
@@ -57,7 +57,7 @@ export default async function OurTeamSection() {
             <div className="w-full flex justify-end items-end">
               <Link
                 href="/about-us"
-                className="w-[250px] h-[60px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[28px]/[35.11px] rounded-[10px] bg-secondary flex justify-center items-center mr-8 capitalize"
+                className="w-[250px] h-[60px] font-normal font-primary text-center text-white text-[17px]/[21.32px] lg:text-[24px]/[32.11px] xl:text-[28px]/[35.11px] rounded-[10px] bg-[#041658] flex justify-center items-center mr-8 capitalize"
               >
                 View all Teams
               </Link>

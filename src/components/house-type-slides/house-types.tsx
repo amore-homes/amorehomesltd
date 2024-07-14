@@ -116,7 +116,7 @@ export default function HouseTypes({ data }: any) {
                   <p className="font-normal font-primary text-[#100808] text-center text-[35px]/[40px] lg:text-[60px]/[80.25px] uppercase">
                     {type.name}
                   </p>
-                  <p className="font-normal font-primary text-primary-text text-left text-[16px]/[24px] lg:text-[18px]/[28px] xl:text-[20px]/[28px]">
+                  <p className="max-w-[450px] font-normal font-primary text-primary-text text-center text-[16px]/[24px] xl:text-[18px]/[28px]">
                     {type.description}
                   </p>
                 </Box>
