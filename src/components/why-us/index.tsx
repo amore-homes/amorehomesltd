@@ -47,8 +47,8 @@ export default function WhyChooseUs() {
               />
             </div>
           </div>
-          <div className="w-full flex flex-col xl:flex-row gap-8 xl:gap-8 xxl:gap-4 justify-between">
-            <div className="w-full max-w-[550px] xl:max-w-[460px] xxl:max-w-[650px] flex flex-col gap-4">
+          <div className="w-full flex flex-col xl:flex-row gap-8 xl:gap-8 xxl:gap-8 justify-between">
+            <div className="w-full md:max-w-[550px] xl:w-[460px] xxl:w-[550px] flex flex-col gap-4">
               <div className="w-full flex space-x-4 md:space-x-8">
                 <div className="w-[65px] h-[65px] rounded-full bg-border shadow-2xl flex justify-center items-center flex-shrink-0">
                   <TeamMemberIcon />

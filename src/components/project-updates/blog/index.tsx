@@ -119,7 +119,6 @@ export default function BlogPage({ shortStories, data }: any) {
         >
           {topStories?.length !== 0 ? (
             topStories?.map((story: any, index: number) => {
-              console.log("first", `https:${story.images.fields.file.url}`)
               return (
                 <Link
                   className="w-full relative"

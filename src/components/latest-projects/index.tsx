@@ -109,7 +109,7 @@ export default async function LatestProjects() {
                   width={project5?.image?.fields?.file?.details?.image?.width}
                   height={project5?.image?.fields?.file?.details?.image?.height}
                   quality={100}
-                  className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[346px] rounded-sm`}
+                  className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[250px] rounded-sm`}
                   loading="lazy"
                   data-aos="flip-right"
                 />

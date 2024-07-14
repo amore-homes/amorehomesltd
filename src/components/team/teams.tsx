@@ -39,7 +39,7 @@ export default function OurTeamMembers({ data }: any) {
         className="w-full h-full"
         modules={[Autoplay, Pagination]}
       >
-        <div className="swiper-wrapper">
+        <div className="w-full h-full">
           {data?.map((person: any, index: number) => {
             return (
               <SwiperSlide
@@ -51,7 +51,7 @@ export default function OurTeamMembers({ data }: any) {
                 }}
               >
                 <div className="w-full flex flex-col">
-                  <div className="w-full lg:w-[380px] xl:w-[380.22px] xxl:w-[400.22px] bg-[#F8F8F8] flex flex-col gap-4 rounded-[40px] cursor-pointer">
+                  <div className="w-full bg-[#F8F8F8] flex flex-col gap-4 rounded-[40px] cursor-pointer">
                     <Image
                       src={
                         person.image.fields.file.url
