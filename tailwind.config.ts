@@ -1,9 +1,6 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
-  corePlugins: {
-    preflight: false,
-  },
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -35,6 +32,7 @@ const config: Config = {
       white: "#ffffff",
       border: "#ECECEC",
       primary: "#B59363",
+      secondary: "#041658",
       "primary-text": "#100808",
       "grey-text": "#8A8A8A",
     },

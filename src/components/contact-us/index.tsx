@@ -17,8 +17,7 @@ export default function ContactUsSection() {
   const [success, setSuccess] = React.useState<boolean>(false)
   const [error, setError] = React.useState<boolean>(false)
   const [message, setMessage] = React.useState<string>("")
-  const lat = 9.07259
-  const lng = 7.44677
+
   const { executeRecaptcha } = useGoogleReCaptcha()
 
   // form validation rules
@@ -115,13 +114,13 @@ export default function ContactUsSection() {
           <Box className="w-full flex flex-col">
             <Typography
               variant="subtitle1"
-              className="text-[#041658] font-primary font-normal text-[30px]/[39.18px] lg:text-[80px]/[90px] xl:text-[96px]/[111px] text-left"
+              className="text-secondary font-primary font-normal text-[30px]/[39.18px] lg:text-[80px]/[90px] xl:text-[96px]/[111px] text-left"
             >
               Contact Us
             </Typography>
             <Typography
               variant="caption"
-              className="font-normal font-primary text-[18px]/[24px] xl:text-[28px]/[40.39px] text-left text-[#041658]"
+              className="font-normal font-primary text-[18px]/[24px] xl:text-[28px]/[40.39px] text-left text-secondary"
             >
               We&apos;ll love to Hear From You
             </Typography>
@@ -255,17 +254,19 @@ export default function ContactUsSection() {
             </Grid>
           </Box>
         </Box>
-        <Box className="w-full lg:w-1/2 relative" data-aos="fade-up">
-          <Link href={`https://www.google.com/maps?saddr=&daddr=${lat},${lng}`}>
-            <Image
-              src="/images/map.svg"
-              alt="map icon"
-              width={975.62}
-              height={1162.04}
-              className="hidden lg:block rounded-[70px] w-full h-[780px] xl:h-[1000px] xxl:h-[1162.04px] cursor-pointer"
-            />
-          </Link>
-        </Box>
+        <div
+          className="hidden lg:block w-full md:w-[750px] h-[780px] xl:h-[1000px] xxl:h-[1100.04px] my-24"
+          id="map"
+          data-aos="fade-up"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7879.764892916524!2d7.4376859!3d9.0744728!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b89949e189f%3A0x964c27b087cf7abe!2sAmore%20Court%20by%20Amore%20Homes!5e0!3m2!1sen!2sng!4v1720851648250!5m2!1sen!2sng"
+            className="inset-0 w-full h-full lg:h-[780px] rounded-[50px] border-none"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </div>
   )

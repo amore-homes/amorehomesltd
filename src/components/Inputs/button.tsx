@@ -25,6 +25,7 @@ export const StyledButton = styled(LoadingButton)({
   borderRadius: 10,
   color: "#FFFFFF",
   cursor: "pointer",
+  backgroundColor: "#041658",
   boxShadow: "0px 0px 0px 1px #12B76A",
   textTransform: "capitalize",
   "&.MuiLoadingButton-root": {
@@ -50,7 +51,8 @@ export function SubmitButton({
   ...rest
 }: ButtonProps) {
   return (
-    <StyledButton
+    <LoadingButton
+      className="w-full h-[48px] flex justify-center p-[14.5px_16px] items-center bg-secondary text-white font-bold font-primary text-[27px]/[33.86px] shadow-[0px_4px_4px_0px_#00000040] rounded-[10px] mt-4"
       loading={loading}
       type="submit"
       disabled={disabled}
@@ -71,6 +73,6 @@ export function SubmitButton({
       {...rest}
     >
       <span>{!loading && text}</span>
-    </StyledButton>
+    </LoadingButton>
   )
 }

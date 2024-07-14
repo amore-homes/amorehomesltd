@@ -10,7 +10,15 @@ import HomePageLayoutWrapper from "."
 export const metadata: Metadata = {
   title: "Amore homes",
   description:
-    "The leading real estate partner providing the best communal living experience while fostering family friendly lifestyle in Nigeria",
+    "Nigeria's leading real estate partner that providing the best communal living experience while fostering family friendly lifestyle",
+  keywords:
+    "Real estate, housing, Nigeria housing in Nigeria, affordable hosuing, estate,residences,Abuja,Nigeria,Lummi, Utako,best communal living experience,communal, leading real estate partner",
+  authors: [
+    {
+      name: "Aisha Abdulkadir Usman",
+      url: "",
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -24,7 +32,7 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <React.Suspense>
+            <React.Suspense fallback="loading...">
               <HomePageLayoutWrapper>{children}</HomePageLayoutWrapper>
             </React.Suspense>
           </ThemeProvider>

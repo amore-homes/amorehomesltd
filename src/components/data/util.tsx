@@ -263,7 +263,7 @@ export const aboutUsFaqs = [
     id: 1,
     question: "What makes Amore Homes properties unique?",
     answer:
-      "We adopt universal design and standardize building production processes. How does Amore Homes promote sustainability in its developments? By ensure a safe and serene environment where energy efficiency is maximized",
+      "We adopt universal design and standardize building production processes.",
   },
   {
     id: 2,
@@ -293,12 +293,6 @@ export const aboutUsFaqs = [
     id: 6,
     question: "Can customers schedule a tour of Amore Homes properties?",
     answer: "Yes, they can.",
-  },
-  {
-    id: 7,
-    question: "How can customers get in touch with Amore Homes?",
-    answer:
-      "Via any of our social media channels; on Instagram @amore_homes and Linkdin @Amore Homes as well as our direct line +2347003000400.",
   },
   {
     id: 7,
@@ -401,5 +395,12 @@ export const aboutUsFaqs = [
       "How has Amore Homes adapted to changes in the real estate market, and what is its strategy for continued success?",
     answer:
       "We’ve adapted to changes in the real estate market by studying market trend and statistics to stay ahead of the curve. Our strategy for continuous success is not limited to; honing our brand identity, consistently market our products, productive collaborations, priotize staff training and cultivate an aftercare program.",
+  },
+  {
+    id: 23,
+    question:
+      "How does Amore Homes promote sustainability in its developments?",
+    answer:
+      "By ensure a safe and serene environment where energy efficiency is maximized",
   },
 ]

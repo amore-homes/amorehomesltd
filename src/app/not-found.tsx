@@ -11,13 +11,13 @@ export default function PageNotFound() {
       <div className="w-full flex flex-col justify-center items-center gap-4">
         <Typography
           variant="h2"
-          className="text-[#041658] font-primary font-normal text-[30px]/[39.18px] lg:text-[80px]/[90px] xl:text-[96px]/[111px] text-left"
+          className="text-secondary font-primary font-normal text-[30px]/[39.18px] lg:text-[80px]/[90px] xl:text-[96px]/[111px] text-left"
         >
           Not Found
         </Typography>
         <Typography
           variant="caption"
-          className="font-normal font-primary text-[24px]/[34px] xl:text-[28px]/[40.39px] text-left text-[#041658]"
+          className="font-normal font-primary text-[24px]/[34px] xl:text-[28px]/[40.39px] text-left text-secondary"
         >
           Could not find requested resource
         </Typography>
