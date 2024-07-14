@@ -63,7 +63,7 @@ export default async function BlogPostSection() {
                   <Grid key={`type-${index}`} item xs={12} sm={6} md={4} xl={3}>
                     <div className="w-full flex flex-col gap-2">
                       <Link
-                        className="w-full lg:w-[380px] xl:w-[380.22px] xxl:w-[400.22px] bg-[#F8F8F8] flex flex-col gap-4 rounded-[40px] cursor-pointer"
+                        className="w-full bg-[#F8F8F8] flex flex-col gap-4 rounded-[40px] cursor-pointer"
                         key={`Press story - ${index}`}
                         href={`/project-updates/blogs/${blog.slug}`}
                       >

@@ -58,7 +58,7 @@ export default async function LatestProjects() {
       </div>
       <div className="w-full relative flex flex-col sm:flex-row gap-4">
         <Image
-          src={`https:/${project1?.image?.fields?.file?.url}`}
+          src={`https:${project1?.image?.fields?.file?.url}`}
           alt={project1?.title}
           width={project1?.image?.fields?.file?.details?.image?.width}
           height={project1?.image?.fields?.file?.details?.image?.height}
@@ -68,7 +68,7 @@ export default async function LatestProjects() {
           data-aos="fade-right"
         />
         <Image
-          src={`https:/${project2?.image?.fields?.file?.url}`}
+          src={`https:${project2?.image?.fields?.file?.url}`}
           alt={project2?.title}
           width={project2?.image?.fields?.file?.details?.image?.width}
           height={project2?.image?.fields?.file?.details?.image?.height}
@@ -82,7 +82,7 @@ export default async function LatestProjects() {
         <div className="w-full sm:w-[580px] md:w-[800px] lg:w-[900px] xl:w-[750px] xxl:w-[1200px] flex justify-between gap-1 xl:gap-4">
           <div className="flex gap-4">
             <Image
-              src={`https:/${project3?.image?.fields?.file?.url}`}
+              src={`https:${project3?.image?.fields?.file?.url}`}
               alt={project3?.title}
               width={project3?.image?.fields?.file?.details?.image?.width}
               height={project3?.image?.fields?.file?.details?.image?.height}
@@ -93,7 +93,7 @@ export default async function LatestProjects() {
             />
             <div className=" flex flex-col gap-1 lg:gap-3 xl:gap-4">
               <Image
-                src={`https:/${project4?.image?.fields?.file?.url}`}
+                src={`https:${project4?.image?.fields?.file?.url}`}
                 alt={project4?.title}
                 width={project4?.image?.fields?.file?.details?.image?.width}
                 height={project4?.image?.fields?.file?.details?.image?.height}
@@ -104,7 +104,7 @@ export default async function LatestProjects() {
               />
               <div className="w-full flex gap-1 md:gap-4">
                 <Image
-                  src={`https:/${project5?.image?.fields?.file?.url}`}
+                  src={`https:${project5?.image?.fields?.file?.url}`}
                   alt={project5?.title}
                   width={project5?.image?.fields?.file?.details?.image?.width}
                   height={project5?.image?.fields?.file?.details?.image?.height}
@@ -114,7 +114,7 @@ export default async function LatestProjects() {
                   data-aos="flip-right"
                 />
                 <Image
-                  src={`https:/${project6?.image?.fields?.file?.url}`}
+                  src={`https:${project6?.image?.fields?.file?.url}`}
                   alt={project6?.title}
                   width={project6?.image?.fields?.file?.details?.image?.width}
                   height={project6?.image?.fields?.file?.details?.image?.height}
