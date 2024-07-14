@@ -271,6 +271,7 @@ export default function OurCommunitiesPage({ data }: any) {
             filteredProperties
               ?.slice(startIndex, endIndex)
               ?.map((type: any, index: number) => {
+                console.log("type", type)
                 return (
                   <Grid key={`type-${index}`} item xs={12} sm={6} md={4} xl={3}>
                     <div className="w-full flex flex-col">
@@ -279,7 +280,7 @@ export default function OurCommunitiesPage({ data }: any) {
                         className="w-full flex flex-col justify-center items-center gap-4 cursor-pointer "
                         onClick={() => setLocation(type)}
                       >
-                        <div className="w-full md:w-[400px] bg-[#F5F5F5] flex flex-col gap-8 rounded-[4px] pb-10 shadow-[4px_8px_11px_0px_#00000040] h-[450px]">
+                        <div className="w-full bg-[#F5F5F5] flex flex-col gap-8 rounded-[4px] pb-10 shadow-[4px_8px_11px_0px_#00000040] h-[450px]">
                           {type?.image?.fields && (
                             <Image
                               src={`https:${type?.image?.fields.file.url}`}
