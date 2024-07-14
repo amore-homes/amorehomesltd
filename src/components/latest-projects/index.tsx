@@ -127,7 +127,7 @@ export default async function LatestProjects() {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-[450px] xl:w-1/3 mt-8 flex flex-col gap-6 pl-4">
+        <div className="w-full max-w-[450px] xl:w-1/3 mt-8 flex flex-col gap-6 pl-8">
           <div className="w-full relative px-8">
             <Divider
               orientation="horizontal"
@@ -161,9 +161,6 @@ export default async function LatestProjects() {
             className="w-full px-2 font-primary font-normal text-[#000000] text-[18px]/[28px] lg:text-[26px]/[32.62px] xl:text-[28px]/[34px] text-left"
             data-aos="fade-up"
           >
-            {/* Our properties each have their own unique design aesthetic,
-            providing an aspirational lifestyle within a thriving community,
-            supported by Our community management team. */}
             {projectDescription?.[0]?.description}
           </p>
         </div>
