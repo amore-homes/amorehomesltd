@@ -54,8 +54,8 @@ export default function OurTeamMembers({ data }: any) {
                   <div className="w-full bg-[#F8F8F8] flex flex-col gap-4 rounded-[40px] cursor-pointer">
                     <Image
                       src={
-                        person.image.fields.file.url
-                          ? `https:${person.image.fields.file.url}`
+                        person?.image?.fields?.file?.url
+                          ? `https:${person?.image?.fields?.file?.url}`
                           : "/images/profile.png"
                       }
                       alt={person.name}

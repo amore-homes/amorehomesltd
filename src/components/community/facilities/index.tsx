@@ -22,7 +22,7 @@ export default function Facilitity() {
               className="font-primary font-normal text-[16px]/[24px] lg:text-[20px/[40px] xl:text-2xl/[40px] text-left text-primary uppercase"
               data-aos="fade-up"
             >
-              Estate facilities
+              Our community facilities
             </h4>
             <div className="relative">
               <h4
@@ -166,7 +166,7 @@ export default function Facilitity() {
                   width={260}
                   height={278}
                   quality={100}
-                  className={`hidden md:block rounded-3xl h-[355px] w-full md:w-[320px] lg:w-[260px] xl:w-[320px] md:h-[580px] lg:h-[400px] xl:h-[548px] xxl:h-[180px] xxl:w-[250px]`}
+                  className={`hidden md:block rounded-3xl h-[355px] w-full md:w-[320px] lg:w-[260px] xl:w-[320px] md:h-[580px] lg:h-[400px] xl:h-[548px] xxl:h-[180px] xxl:w-[245px]`}
                   loading="lazy"
                 />
                 <div className="w-[200px] h-[120px] border border-grey-text border-solid rounded-3xl flex flex-col px-2 py-4">

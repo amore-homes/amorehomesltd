@@ -2,7 +2,7 @@ import { useLottie } from "lottie-react"
 import solar from "./solar.json"
 
 const style = {
-  height: 40,
+  height: 35,
 }
 export default function SolarPowerIcon() {
   const options = {

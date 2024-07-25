@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
                     <BriefIcon className="w-[45px] h-[45px]" />
                     <div className="flex flex-col">
                       <h4 className="font-primary font-bold text-[45px]/[46px] text-left text-white">
-                        <CountUp end={12} />+
+                        <CountUp end={4} />+
                       </h4>
                       <p className="font-primary font-semibold text-sm text-left text-white">
                         years of experience

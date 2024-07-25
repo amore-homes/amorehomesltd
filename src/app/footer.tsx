@@ -44,8 +44,8 @@ export default function FooterSection() {
         <div className="w-full max-w-[1280px] flex flex-col lg:flex-row gap-4 lg:gap-8 xxl:gap-10">
           <div className="w-full md:w-1/2 flex gap-4 px-4">
             <LocationIcon style={{ width: 90, height: 90 }} />
-            <span className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]">
-              Ngozi Okonjo-Iweala Way, Utako, Federal Capital Territory, Nigeria
+            <span className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[30px]/[45px]">
+              Lummi Island by Amore Homes, 892 N Okonjo-Iweala Wy, Utako, Abuja.
             </span>
           </div>
           <Divider
@@ -58,14 +58,14 @@ export default function FooterSection() {
             <MobilePhone style={{ width: 90, height: 90 }} />
             <Link
               href="tel: +2347003000400"
-              className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[38px]/[50px]"
+              className="font-normal font-primary text-white text-[20px]/[28px] md:text-[27.3px]/[38px] xl:text-[30px]/[45px]"
             >
               Call +2347003000400 For Information about Virtual tours
             </Link>
           </div>
         </div>
       </div>
-      <div className="w-full bg-[#001252E0]">
+      <div className="w-full bg-[#001252E0] mt-4 md:mt-[50px]">
         <div className="w-full flex flex-row gap-4 lg:gap-8 xxl:gap-10 justify-between px-8 py-2">
           <div className="w-full flex flex-col gap-1 md:gap-2">
             <span className="text-white text-[13.2px]/[20px] lg:text-[26px]/[33.86px] font-normal font-primary">

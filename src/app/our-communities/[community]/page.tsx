@@ -1,10 +1,9 @@
-import AmoreCommunitySection from "@/components/amore"
 import BlogPostSection from "@/components/blog-post"
+import CommunityDescription from "@/components/community"
 import {
   createContentClient,
   getEntryBySlug,
 } from "@/components/data/contentful"
-import LummiCommunitySection from "@/components/lummi"
 
 const client = createContentClient()
 export async function generateStaticParams() {
@@ -27,17 +26,17 @@ function updateKey(str: string) {
 export default async function HomePage({ params }: any) {
   const { community } = params
   const blog = await getEntryBySlug(community, "homepageOurCommunities")
-  const { image }: any = blog
+  const { image, description, caption }: any = blog
 
   return (
     <div className="w-full">
       {/* Community */}
-      {updateKey(community).includes("lummi") ? (
-        <LummiCommunitySection imageData={image} name={updateKey(community)} />
-      ) : (
-        <AmoreCommunitySection imageData={image} name={updateKey(community)} />
-      )}
-
+      <CommunityDescription
+        description={description}
+        imageData={image}
+        name={updateKey(community)}
+        caption={caption}
+      />
       {/* *** BLOG *** */}
       <BlogPostSection />
     </div>

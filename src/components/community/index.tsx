@@ -1,29 +1,16 @@
-import {
-  createContentClient,
-  getEntryBySlug,
-} from "@/components/data/contentful"
+"use client"
+import Image from "next/image"
+import Facilitity from "./facilities"
+import LummiHomeFeatures from "./home-features"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import Image from "next/image"
-import Link from "next/link"
 
-const client = createContentClient()
-export async function generateStaticParams() {
-  const queryOptions = {
-    content_type: "pressStory",
-    select: "fields.slug",
-  }
-  const stories = await client.getEntries(queryOptions)
-  return stories.items.map((story) => ({
-    slug: story.fields.slug,
-  }))
-}
-
-export default async function BlogDetailPage({ params }: any) {
-  const { slug } = params
-  const blog = await getEntryBySlug(slug, "pressStory")
-  const { title, content, images, lastUpdate }: any = blog
-
+export default function CommunityDescription({
+  imageData,
+  name,
+  description,
+  caption,
+}: any) {
   const HEADING_1 = ({ children }: any) => (
     <h1 className="w-full flex flex-col gap-2 text-primary-text text-[30px]/[35.4px] md:text-[35px]/[40px] text-left font-bold font-primary normal-case mt-2">
       {children}
@@ -60,7 +47,7 @@ export default async function BlogDetailPage({ params }: any) {
     </p>
   )
   const Text = ({ children }: any) => (
-    <p className="w-full flex flex-col gap-2 text-primary-text text-[16px]/[28.4px] md:text-[22px]/[32.4px] text-justify font-normal font-primary">
+    <p className="w-full flex flex-col gap-2 text-primary-text text-[16px]/[28.4px] md:text-[20px]/[32.4px] text-left font-normal font-primary">
       {children}
     </p>
   )
@@ -135,38 +122,48 @@ export default async function BlogDetailPage({ params }: any) {
     },
   }
   return (
-    <div className="w-full min-h-screen relative flex flex-col gap-12 mt-[150px] items-center">
-      <div className="w-full max-w-[1280px] flex flex-col pb-4 px-4 lg:px-[30px] xl:px-[40px] xxl:px-[96px] relative gap-10 items-center">
-        <div className="w-full flex flex-col">
-          <Link
-            href="/project-updates"
-            className="w-[120px] rounded-full bg-secondary text-white flex justify-center items-center text-sm font-primary font-bold py-1 uppercase"
-          >
-            Go back
-          </Link>
+    <div className="w-full flex flex-col">
+      <section
+        id="community-section"
+        className="w-full flex flex-col sm:gap-4 justify-center lg:justify-start items-center lg:items-start pb-4 md:pb-0 pt-[40px] md:pt-[40px] xl:pt-[60px] px-4 pr-0 md:pl-8 lg:pl-[38px] xl:pl-[60px] xxl:pl-[96px] relative"
+        data-aos="fade-up"
+      >
+        <div className="w-full flex flex-col gap-8">
+          <div className="w-full flex flex-col xl:flex-row gap-8 xl:gap-1 xxl:gap-12">
+            <div className="flex flex-col gap-6 place-content-center">
+              <div className="w-full flex flex-col justify-center items-center gap-2">
+                <h1 className="w-full flex flex-col gap-2 text-primary-text text-[30px]/[35.4px] md:text-[60px]/[80px] font-bold font-primary uppercase text-center m-0 p-0">
+                  {name}
+                  <span className="w-full flex flex-col gap-2 text-grey-text text-[16px]/[24px] md:text-[18px]/[24px] text-center font-semibold font-primary">
+                    {caption}
+                  </span>
+                </h1>
+              </div>
+
+              <div className="w-full max-w-[1680px] flex flex-col gap-2">
+                {documentToReactComponents(description, renderOption)}
+              </div>
+            </div>
+            <div className="w-full  hidden md:flex gap-4 xxl:gap-8">
+              {imageData && (
+                <Image
+                  src={`https:${imageData?.fields.file.url}`}
+                  alt={imageData.fields.title}
+                  width={imageData.fields.file.details.image.width}
+                  height={imageData.fields.file.details.image.height}
+                  quality={100}
+                  className={`hidden md:block h-[355px] w-full md:w-[320px] lg:w-[260px] xl:w-[320px] md:h-[580px] lg:h-[400px] xl:h-[548px] xxl:h-[648px] xxl:w-[980px]`}
+                  loading="lazy"
+                />
+              )}
+            </div>
+          </div>
         </div>
-        <div className="w-full flex flex-col">
-          <h1 className="w-full flex flex-col gap-2 text-secondary text-[37px]/[46.39px] text-left font-normal font-primary uppercase m-0">
-            {title}
-          </h1>
-          <p className="w-full flex flex-col gap-2 text-primary-text text-[18px]/[28.4px] text-left font-normal font-primary normal-case m-0">
-            Last Update: {lastUpdate}
-          </p>
-        </div>
-        <div className="w-full relative cursor-pointer" data-aos="fade-right">
-          <Image
-            src={`https:${images.fields.file.url}`}
-            alt={title}
-            width={images.fields.file.details.image.width}
-            height={images.fields.file.details.image.height}
-            quality={100}
-            className={`w-full xl:w-[${images.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
-          />
-        </div>
-        <div className="w-full flex flex-col gap-4">
-          {documentToReactComponents(content, renderOption)}
-        </div>
-      </div>
+      </section>
+      {/* Facilities */}
+      <Facilitity />
+      {/* Home features */}
+      <LummiHomeFeatures />
     </div>
   )
 }

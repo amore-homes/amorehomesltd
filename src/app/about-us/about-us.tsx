@@ -62,8 +62,8 @@ export default function AboutUs({
                     <div className="w-full flex flex-col gap-4 rounded-[40px] cursor-pointer">
                       <Image
                         src={
-                          person.image.fields.file.url
-                            ? `https:${person.image.fields.file.url}`
+                          person?.image?.fields?.file?.url
+                            ? `https:${person?.image?.fields?.file?.url}`
                             : "/images/profile.png"
                         }
                         alt={person.name}
@@ -82,18 +82,22 @@ export default function AboutUs({
 
                         <div className="w-full flex flex-col gap-2">
                           <div className="w-full flex gap-2 h-4 mt-1">
-                            <div className="flex gap-1 items-center border-r-2 border-grey-text pr-3">
-                              <EmailIcon />
-                              <p className="block text-secondary text-[14px]/[24px] font-normal font-primary text-left m-0">
-                                {person.email}
-                              </p>
-                            </div>
-                            <div className="flex gap-1 items-center">
-                              <PhoneIcon />
-                              <p className="block text-secondary text-[14px]/[24px] font-normal font-primary text-left m-0">
-                                {person.phoneNumber}
-                              </p>
-                            </div>
+                            {person.email && (
+                              <div className="flex gap-1 items-center border-r-2 border-grey-text pr-3">
+                                <EmailIcon />
+                                <p className="block text-secondary text-[14px]/[24px] font-normal font-primary text-left m-0">
+                                  {person.email}
+                                </p>
+                              </div>
+                            )}
+                            {person.email && (
+                              <div className="flex gap-1 items-center">
+                                <PhoneIcon />
+                                <p className="block text-secondary text-[14px]/[24px] font-normal font-primary text-left m-0">
+                                  {person.phoneNumber}
+                                </p>
+                              </div>
+                            )}
                           </div>
                           <div className="w-[100px] flex gap-3">
                             {/* facebook */}
@@ -147,6 +151,7 @@ export default function AboutUs({
             src={`https://www.youtube.com/embed/${videoId?.[0].videoId}?controls=0&rel=0&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Famorehomesltd.com&widgetid=1`}
             title="beautiful house"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
           ></iframe>
         </div>
         {/* Mission and vision */}

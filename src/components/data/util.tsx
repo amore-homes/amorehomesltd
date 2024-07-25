@@ -266,11 +266,6 @@ export const aboutUsFaqs = [
       "We adopt universal design and standardize building production processes.",
   },
   {
-    id: 2,
-    question: "What kind of technology is used in Amore Homes properties?",
-    answer: "Home automation, solar powered systems and centralized LPG system",
-  },
-  {
     id: 3,
     question: "What are the benefits of living in an Amore Home?",
     answer:
@@ -287,7 +282,7 @@ export const aboutUsFaqs = [
     id: 5,
     question: "Who are the people behind Amore Homes?",
     answer:
-      "Eloquent businessmen and seasoned professionals lead by Engr. Aliyu Babangida and Arch. Yahya Rufai.",
+      "Eloquent businessmen and seasoned professionals lead by Engr. Shehu Abubakar Sani",
   },
   {
     id: 6,
