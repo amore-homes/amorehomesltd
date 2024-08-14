@@ -65,13 +65,15 @@ export default function HouseTypes({ data }: any) {
                     className="w-full h-[520px] lg:w-[380px] xl:w-[380.22px] xxl:w-[400.22px] bg-[#F8F8F8] flex flex-col gap-8 rounded-[40px] pb-10 cursor-pointer shadow-[11px_17px_23px_0px_#00000040]"
                     onClick={() => router.push("/our-communities")}
                   >
-                    <Image
-                      src={`https:${type.image.fields.file.url}`}
-                      alt={type.name}
-                      width={402}
-                      height={298}
-                      className="w-full lg:w-[380px] xl:w-[380px] xxl:w-[402px] h-[298px] rounded-[40px] hover:scale-[1.01]"
-                    />
+                    {type.image.fields?.file?.url && (
+                      <Image
+                        src={`https:${type.image.fields?.file?.url}`}
+                        alt={type.name}
+                        width={402}
+                        height={298}
+                        className="w-full lg:w-[380px] xl:w-[380px] xxl:w-[402px] h-[298px] rounded-[40px] hover:scale-[1.01]"
+                      />
+                    )}
                     <h4 className="text-[#000000] text-left font-normal font-primary text-[18px]/[28px] md:text-[20px]/[30px] px-6">
                       {type.address}
                     </h4>

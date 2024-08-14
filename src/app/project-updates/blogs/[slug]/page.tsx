@@ -81,23 +81,31 @@ export default async function BlogDetailPage({ params }: any) {
             )
           case "image/png":
             return (
-              <Image
-                src={`https:${node.data.target.fields.file.url}`}
-                height={node.data.target.fields.file.details.image.height}
-                width={node.data.target.fields.file.details.image.width}
-                alt={node.data.target.fields.description}
-                className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
-              />
+              <>
+                {node.data.target.fields && (
+                  <Image
+                    src={`https:${node.data.target.fields.file.url}`}
+                    height={node.data.target.fields.file.details.image.height}
+                    width={node.data.target.fields.file.details.image.width}
+                    alt={node.data.target.fields.description}
+                    className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
+                  />
+                )}
+              </>
             )
           case "image/jpeg":
             return (
-              <Image
-                src={`https:${node.data.target.fields.file.url}`}
-                height={node.data.target.fields.file.details.image.height}
-                width={node.data.target.fields.file.details.image.width}
-                alt={node.data.target.fields.description}
-                className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
-              />
+              <>
+                {node.data.target.fields && (
+                  <Image
+                    src={`https:${node.data.target.fields.file.url}`}
+                    height={node.data.target.fields.file.details.image.height}
+                    width={node.data.target.fields.file.details.image.width}
+                    alt={node.data.target.fields.description}
+                    className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
+                  />
+                )}
+              </>
             )
           default:
             return "Nothing to see here..."
@@ -154,14 +162,16 @@ export default async function BlogDetailPage({ params }: any) {
           </p>
         </div>
         <div className="w-full relative cursor-pointer" data-aos="fade-right">
-          <Image
-            src={`https:${images.fields.file.url}`}
-            alt={title}
-            width={images.fields.file.details.image.width}
-            height={images.fields.file.details.image.height}
-            quality={100}
-            className={`w-full xl:w-[${images.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
-          />
+          {images.fields.file.url && (
+            <Image
+              src={`https:${images.fields.file.url}`}
+              alt={title}
+              width={images.fields.file.details.image.width}
+              height={images.fields.file.details.image.height}
+              quality={100}
+              className={`w-full xl:w-[${images.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
+            />
+          )}
         </div>
         <div className="w-full flex flex-col gap-4">
           {documentToReactComponents(content, renderOption)}

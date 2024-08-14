@@ -28,15 +28,19 @@ export default function EventsPage({ data, topEvents, latestEvents }: any) {
             {leftSidePictures?.length !== 0 ? (
               leftSidePictures?.map((pic: any, index: number) => {
                 return (
-                  <Image
-                    key={`Event picture - ${index}`}
-                    src={`https:${pic.image?.[0].fields.file.url}`}
-                    alt={pic.eventPictures}
-                    width={pic.image?.[0].fields.file.details.image.width}
-                    height={pic.image?.[0].fields.file.details.image.height}
-                    quality={100}
-                    className={`w-full h-h-[206px] xl:h-[435px] sm:w-[${pic.image?.[0].fields.file.details.image.width}px] relative rounded-[25px]`}
-                  />
+                  <>
+                    {pic.image?.[0].fields.file.url && (
+                      <Image
+                        key={`Event picture - ${index}`}
+                        src={`https:${pic.image?.[0].fields.file.url}`}
+                        alt={pic.eventPictures}
+                        width={pic.image?.[0].fields.file.details.image.width}
+                        height={pic.image?.[0].fields.file.details.image.height}
+                        quality={100}
+                        className={`w-full h-h-[206px] xl:h-[435px] sm:w-[${pic.image?.[0].fields.file.details.image.width}px] relative rounded-[25px]`}
+                      />
+                    )}
+                  </>
                 )
               })
             ) : (
@@ -52,14 +56,16 @@ export default function EventsPage({ data, topEvents, latestEvents }: any) {
                   className="w-full relative"
                   key={`Event picture - ${index}`}
                 >
-                  <Image
-                    src={`https:${pic.image?.[0].fields.file.url}`}
-                    alt={pic.eventPictures}
-                    width={pic.image?.[0].fields.file.details.image.width}
-                    height={pic.image?.[0].fields.file.details.image.height}
-                    quality={100}
-                    className={`w-full h-full sm:h-[206px] sm:w-[${pic.image?.[0].fields.file.details.image.width}px] relative rounded-[25px]`}
-                  />
+                  {pic.image?.[0].fields.file.url && (
+                    <Image
+                      src={`https:${pic.image?.[0].fields.file.url}`}
+                      alt={pic.eventPictures}
+                      width={pic.image?.[0].fields.file.details.image.width}
+                      height={pic.image?.[0].fields.file.details.image.height}
+                      quality={100}
+                      className={`w-full h-full sm:h-[206px] sm:w-[${pic.image?.[0].fields.file.details.image.width}px] relative rounded-[25px]`}
+                    />
+                  )}
                 </div>
               )
             })
@@ -102,14 +108,16 @@ export default function EventsPage({ data, topEvents, latestEvents }: any) {
                   key={`Top event - ${index}`}
                 >
                   <div className="w-full relative">
-                    <Image
-                      src={`https:${event.images.fields.file.url}`}
-                      alt={event.description}
-                      width={event.images.fields.file.details.image.width}
-                      height={event.images.fields.file.details.image.height}
-                      quality={100}
-                      className={`w-full h-full sm:h-[250px] sm:w-[${event.images.fields.file.details.image.width}px] relative rounded-[25px]`}
-                    />
+                    {event.images.fields.file.url && (
+                      <Image
+                        src={`https:${event.images.fields.file.url}`}
+                        alt={event.description}
+                        width={event.images.fields.file.details.image.width}
+                        height={event.images.fields.file.details.image.height}
+                        quality={100}
+                        className={`w-full h-full sm:h-[250px] sm:w-[${event.images.fields.file.details.image.width}px] relative rounded-[25px]`}
+                      />
+                    )}
                   </div>
                   <p className="w-full text-left text-[#000000] font-primary font-normal text-[24px]/[30.09px] flex items-center justify-start mt-1">
                     {event.description}
@@ -134,15 +142,21 @@ export default function EventsPage({ data, topEvents, latestEvents }: any) {
             {latestEvents?.length !== 0 ? (
               latestEvents?.map((pic: any, index: number) => {
                 return (
-                  <Image
-                    key={`Event picture - ${index}`}
-                    src={`https:${pic.images?.[0].fields.file.url}`}
-                    alt={pic.name}
-                    width={pic.images?.[0].fields.file.details.image.width}
-                    height={pic.images?.[0].fields.file.details.image.height}
-                    quality={100}
-                    className={`w-full h-h-[206px] xl:h-[277px] sm:w-[${pic.images?.[0].fields.file.details.image.width}px] relative rounded-[25px]`}
-                  />
+                  <>
+                    {pic.images?.[0].fields.file.url && (
+                      <Image
+                        key={`Event picture - ${index}`}
+                        src={`https:${pic.images?.[0].fields.file.url}`}
+                        alt={pic.name}
+                        width={pic.images?.[0].fields.file.details.image.width}
+                        height={
+                          pic.images?.[0].fields.file.details.image.height
+                        }
+                        quality={100}
+                        className={`w-full h-h-[206px] xl:h-[277px] sm:w-[${pic.images?.[0].fields.file.details.image.width}px] relative rounded-[25px]`}
+                      />
+                    )}
+                  </>
                 )
               })
             ) : (

@@ -2,26 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-body {
-  background: #ffffff;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
 @font-face {
   font-family: "Marcellus";
   src: url("/fonts/Marcellus-Regular.ttf");
@@ -29,6 +9,49 @@ body {
   font-display: swap;
   font-style: normal;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+h1 + p,
+h2 + p,
+h3 + p {
+  page-break-before: avoid;
+}
+
+table,
+figure {
+  page-break-inside: avoid;
+}
+html::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* The grabbable scrollbar button  */
+html::-webkit-scrollbar-thumb {
+  background: #041658;
+  border-radius: 30;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, 0.25),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* The vertical scrollbar background */
+html::-webkit-scrollbar-track {
+  background: #d1dadd;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-clear-button {
+  display: none;
+}
+
 .info-window-content .gm-style-iw-t {
   display: none !important;
 }

@@ -10,9 +10,27 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "amore-homes.vercel",
+        hostname: "amore-homes.vercel.app",
         port: "",
         pathname: "/images/**",
+      },
+      {
+        protocol: "https",
+        hostname: "amore-homes.vercel.app",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost:**",
+        port: "",
+        pathname: "/images/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost:**",
+        port: "",
+        pathname: "/**",
       },
     ],
   },

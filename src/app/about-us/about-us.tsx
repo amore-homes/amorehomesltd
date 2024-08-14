@@ -7,6 +7,7 @@ import {
   PhoneIcon,
   TwitterIcon,
 } from "@/components/SVGs"
+import { moveItemToFront } from "@/components/data"
 import MissionVision from "@/components/mission-and-vision"
 import { Grid } from "@mui/material"
 import Image from "next/image"
@@ -20,11 +21,7 @@ export default function AboutUs({
   coreValue,
   moreInformation,
 }: any) {
-  const sortedItems = data?.sort((a: any, b: any) => {
-    if (a.name < b.name) return -1
-    if (a.name > b.name) return 1
-    return 0
-  })
+  const sortedItems = moveItemToFront(data, "Chief Executive Officer")
 
   return (
     <div className="w-full h-full flex flex-col justify-start items-start pb-8 pt-[80px] px-4 lg:mt-0 md:py-[60px] relative gap-8 overflow-hidden">

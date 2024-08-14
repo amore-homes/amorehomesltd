@@ -68,23 +68,31 @@ export default function CommunityDescription({
             )
           case "image/png":
             return (
-              <Image
-                src={`https:${node.data.target.fields.file.url}`}
-                height={node.data.target.fields.file.details.image.height}
-                width={node.data.target.fields.file.details.image.width}
-                alt={node.data.target.fields.description}
-                className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
-              />
+              <>
+                {node.data.target.fields?.file?.url && (
+                  <Image
+                    src={`https:${node.data.target.fields?.file?.url}`}
+                    height={node.data.target.fields.file.details.image.height}
+                    width={node.data.target.fields.file.details.image.width}
+                    alt={node.data.target.fields.description}
+                    className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
+                  />
+                )}
+              </>
             )
           case "image/jpeg":
             return (
-              <Image
-                src={`https:${node.data.target.fields.file.url}`}
-                height={node.data.target.fields.file.details.image.height}
-                width={node.data.target.fields.file.details.image.width}
-                alt={node.data.target.fields.description}
-                className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
-              />
+              <>
+                {node.data.target.fields?.file?.url && (
+                  <Image
+                    src={`https:${node.data.target.fields?.file?.url}`}
+                    height={node.data.target.fields.file.details.image.height}
+                    width={node.data.target.fields.file.details.image.width}
+                    alt={node.data.target.fields.description}
+                    className={`w-full xl:w-[${node.data.target.fields.file.details.image.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
+                  />
+                )}
+              </>
             )
           default:
             return "Nothing to see here..."
@@ -145,9 +153,9 @@ export default function CommunityDescription({
               </div>
             </div>
             <div className="w-full  hidden md:flex gap-4 xxl:gap-8">
-              {imageData && (
+              {imageData?.fields?.file?.url && (
                 <Image
-                  src={`https:${imageData?.fields.file.url}`}
+                  src={`https:${imageData?.fields?.file?.url}`}
                   alt={imageData.fields.title}
                   width={imageData.fields.file.details.image.width}
                   height={imageData.fields.file.details.image.height}

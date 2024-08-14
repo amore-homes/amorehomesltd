@@ -7,8 +7,10 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import { FacebookIcon, InstagramIcon, TwitterIcon } from "../SVGs"
 import Link from "next/link"
 import ArrowUpIcon from "../lottie/arrowUp"
+import { moveItemToFront } from "../data"
 
 export default function OurTeamMembers({ data }: any) {
+  const result = moveItemToFront(data, "Chief Executive Officer")
   return (
     <div className="w-full h-full relative flex flex-col gap-24">
       <Swiper
@@ -40,7 +42,7 @@ export default function OurTeamMembers({ data }: any) {
         modules={[Autoplay, Pagination]}
       >
         <div className="w-full h-full">
-          {data?.map((person: any, index: number) => {
+          {result?.map((person: any, index: number) => {
             return (
               <SwiperSlide
                 key={`type-${index}`}

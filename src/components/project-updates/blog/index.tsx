@@ -30,18 +30,22 @@ export default function BlogPage({ shortStories, data }: any) {
                   <p className="absolute left-5 sm:left-10 top-5 sm:top-20 w-[217px] h-[41px] text-white bg-[#CA4B4B] z-50 font-primary font-normal text-[24px]/[30.09px] flex items-center justify-center">
                     Featured Story
                   </p>
-                  <Image
-                    src={`https:${featuredStory?.[0].images.fields.file.url}`}
-                    alt={featuredStory?.[0]?.title}
-                    width={
-                      featuredStory?.[0].images.fields.file.details.image.width
-                    }
-                    height={
-                      featuredStory?.[0].images.fields.file.details.image.height
-                    }
-                    quality={100}
-                    className={`w-full xl:w-[${featuredStory?.[0].images.fields.file.details.image?.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
-                  />
+                  {featuredStory?.[0].images.fields.file.url && (
+                    <Image
+                      src={`https:${featuredStory?.[0].images.fields.file.url}`}
+                      alt={featuredStory?.[0]?.title}
+                      width={
+                        featuredStory?.[0].images.fields.file.details.image
+                          .width
+                      }
+                      height={
+                        featuredStory?.[0].images.fields.file.details.image
+                          .height
+                      }
+                      quality={100}
+                      className={`w-full xl:w-[${featuredStory?.[0].images.fields.file.details.image?.width}] h-[206px] xl:h-[655px] relative rounded-[25px]`}
+                    />
+                  )}
                   <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                     <p className="w-full text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                       {featuredStory?.[0]?.title}
@@ -65,14 +69,16 @@ export default function BlogPage({ shortStories, data }: any) {
                     key={`Press story - ${index}`}
                     href={`/project-updates/blogs/${press.slug}`}
                   >
-                    <Image
-                      src={`https:${press.images.fields.file.url}`}
-                      alt={press.description}
-                      width={press.images.fields.file.details.image.width}
-                      height={press.images.fields.file.details.image.height}
-                      quality={100}
-                      className={`w-full h-full sm:h-[206px] sm:w-[${press.images.fields.file.details.image.width}px] relative rounded-[25px]`}
-                    />
+                    {press.images.fields.file.url && (
+                      <Image
+                        src={`https:${press.images.fields.file.url}`}
+                        alt={press.description}
+                        width={press.images.fields.file.details.image.width}
+                        height={press.images.fields.file.details.image.height}
+                        quality={100}
+                        className={`w-full h-full sm:h-[206px] sm:w-[${press.images.fields.file.details.image.width}px] relative rounded-[25px]`}
+                      />
+                    )}
                     <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                       <p className="w-full max-w-[345px] text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                         {press.description}
@@ -126,15 +132,16 @@ export default function BlogPage({ shortStories, data }: any) {
                   href={`/project-updates/blogs/${story.slug}`}
                 >
                   <div className="w-full relative">
-                    <Image
-                      src={`https:${story.images.fields.file.url}`}
-                      alt={story.description}
-                      width={story.images.fields.file.details.image.width}
-                      height={story.images.fields.file.details.image.height}
-                      quality={100}
-                      className={`w-full h-full sm:h-[250px] sm:w-[${story.images.fields.file.details.image.width}px] relative rounded-[25px]`}
-                    />
-
+                    {story.images.fields.file.url && (
+                      <Image
+                        src={`https:${story.images.fields.file.url}`}
+                        alt={story.description}
+                        width={story.images.fields.file.details.image.width}
+                        height={story.images.fields.file.details.image.height}
+                        quality={100}
+                        className={`w-full h-full sm:h-[250px] sm:w-[${story.images.fields.file.details.image.width}px] relative rounded-[25px]`}
+                      />
+                    )}
                     <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                       <p className="w-full max-w-[345px] text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                         {story.title}
@@ -199,14 +206,16 @@ export default function BlogPage({ shortStories, data }: any) {
                     key={`latest story - ${index}`}
                     href={`/project-updates/blogs/${story.slug}`}
                   >
-                    <Image
-                      src={`https:${story.images.fields.file.url}`}
-                      alt={story.description}
-                      width={story.images.fields.file.details.image.width}
-                      height={story.images.fields.file.details.image.height}
-                      quality={100}
-                      className={`w-full h-full sm:h-[277px] sm:w-[704px] relative rounded-[25px]`}
-                    />
+                    {story.images.fields.file.url && (
+                      <Image
+                        src={`https:${story.images.fields.file.url}`}
+                        alt={story.description}
+                        width={story.images.fields.file.details.image.width}
+                        height={story.images.fields.file.details.image.height}
+                        quality={100}
+                        className={`w-full h-full sm:h-[277px] sm:w-[704px] relative rounded-[25px]`}
+                      />
+                    )}
                     <div className="w-full absolute bottom-0 h-[60px] flex items-center justify-left bg-[#000000B2]">
                       <p className="w-full max-w-[345px] text-[#A9A8A8] font-primary font-normal text-[26px]/[32.6px] overflow-hidden text-nowrap text-ellipsis px-4">
                         {story.title}

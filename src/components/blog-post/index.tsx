@@ -67,14 +67,20 @@ export default async function BlogPostSection() {
                         key={`Press story - ${index}`}
                         href={`/project-updates/blogs/${blog.slug}`}
                       >
-                        <Image
-                          src={`https:${blog.images.fields.file.url}`}
-                          alt={blog.description}
-                          width={blog.images.fields.file.details.image.width}
-                          height={blog.images.fields.file.details.image.height}
-                          quality={100}
-                          className={`w-full h-full sm:h-[226px] sm:w-[${blog.images.fields.file.details.image.width}px] relative rounded-[20px]`}
-                        />
+                        {blog.images.fields?.file?.url && (
+                          <Image
+                            src={`https:${blog.images.fields?.file?.url}`}
+                            alt={blog.description}
+                            width={
+                              blog.images.fields?.file?.details?.image?.width
+                            }
+                            height={
+                              blog.images.fields?.file?.details?.image?.height
+                            }
+                            quality={100}
+                            className={`w-full h-full sm:h-[226px] sm:w-[${blog.images.fields?.file?.details?.image?.width}px] relative rounded-[20px]`}
+                          />
+                        )}
                         <div className="m-0 w-full flex flex-col justify-start items-start">
                           <h4 className="text-grey-text text-[16px]/[24px] font-normal font-primary text-left">
                             <span className="font-normal">Written by</span>{" "}

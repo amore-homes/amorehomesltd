@@ -22,6 +22,7 @@ export default async function LatestProjects() {
   const project4 = data?.find((item: any) => item.name === "Update-4")
   const project5 = data?.find((item: any) => item.name === "Update-5")
   const project6 = data?.find((item: any) => item.name === "Update-6")
+
   return (
     <section
       id="project-section"
@@ -57,79 +58,95 @@ export default async function LatestProjects() {
         </div>
       </div>
       <div className="w-full relative flex flex-col sm:flex-row gap-4">
-        <Image
-          src={`https:${project1?.image?.fields?.file?.url}`}
-          alt={project1?.title}
-          width={project1?.image?.fields?.file?.details?.image?.width}
-          height={project1?.image?.fields?.file?.details?.image?.height}
-          quality={100}
-          className={`rounded-sm h-[200px] w-full lg:w-1/3 xl:h-[414px]`}
-          loading="lazy"
-          data-aos="fade-right"
-        />
-        <Image
-          src={`https:${project2?.image?.fields?.file?.url}`}
-          alt={project2?.title}
-          width={project2?.image?.fields?.file?.details?.image?.width}
-          height={project2?.image?.fields?.file?.details?.image?.height}
-          quality={100}
-          className={`rounded-sm h-[200px] w-full lg:w-2/3 xl:h-[414px]`}
-          loading="lazy"
-          data-aos="fade-left"
-        />
+        {project1?.image?.fields?.file?.url && (
+          <Image
+            src={`https:${project1?.image?.fields?.file?.url}`}
+            alt={project1?.title}
+            width={project1?.image?.fields?.file?.details?.image?.width}
+            height={project1?.image?.fields?.file?.details?.image?.height}
+            quality={100}
+            className={`rounded-sm h-[200px] w-full lg:w-1/3 xl:h-[414px]`}
+            loading="lazy"
+            data-aos="fade-right"
+          />
+        )}
+        {project2?.image?.fields?.file?.url && (
+          <Image
+            src={`https:${project2?.image?.fields?.file?.url}`}
+            alt={project2?.title}
+            width={project2?.image?.fields?.file?.details?.image?.width}
+            height={project2?.image?.fields?.file?.details?.image?.height}
+            quality={100}
+            className={`rounded-sm h-[200px] w-full lg:w-2/3 xl:h-[414px]`}
+            loading="lazy"
+            data-aos="fade-left"
+          />
+        )}
       </div>
       <div className="w-full flex relative flex-col lg:flex-row">
         <div className="w-full sm:w-[580px] md:w-[800px] lg:w-[900px] xl:w-[750px] xxl:w-[1200px] flex justify-between gap-1 xl:gap-4">
           <div className="flex gap-4">
-            <Image
-              src={`https:${project3?.image?.fields?.file?.url}`}
-              alt={project3?.title}
-              width={project3?.image?.fields?.file?.details?.image?.width}
-              height={project3?.image?.fields?.file?.details?.image?.height}
-              quality={100}
-              className={`rounded-sm h-[285px] w-[135px] lg:w-[260px] xl:w-[280px] lg:h-[480px] xl:h-[578px] xxl:h-[878px] xxl:w-[460px]`}
-              loading="lazy"
-              data-aos="fade-up"
-            />
-            <div className=" flex flex-col gap-1 lg:gap-3 xl:gap-4">
+            {project3?.image?.fields?.file?.url && (
               <Image
-                src={`https:${project4?.image?.fields?.file?.url}`}
-                alt={project4?.title}
-                width={project4?.image?.fields?.file?.details?.image?.width}
-                height={project4?.image?.fields?.file?.details?.image?.height}
+                src={`https:${project3?.image?.fields?.file?.url}`}
+                alt={project3?.title}
+                width={project3?.image?.fields?.file?.details?.image?.width}
+                height={project3?.image?.fields?.file?.details?.image?.height}
                 quality={100}
-                className={`rounded-sm h-[150px] lg:h-[250px] w-[185px] lg:w-[350px] xl:h-[350px] xl:w-[431px] xxl:h-[401px] xxl:w-[693px]`}
+                className={`rounded-sm h-[285px] w-[135px] lg:w-[260px] xl:w-[280px] lg:h-[480px] xl:h-[578px] xxl:h-[878px] xxl:w-[460px]`}
                 loading="lazy"
-                data-aos="flip-left"
+                data-aos="fade-up"
               />
+            )}
+            <div className=" flex flex-col gap-1 lg:gap-3 xl:gap-4">
+              {project4?.image?.fields?.file?.url && (
+                <Image
+                  src={`https:${project4?.image?.fields?.file?.url}`}
+                  alt={project4?.title}
+                  width={project4?.image?.fields?.file?.details?.image?.width}
+                  height={project4?.image?.fields?.file?.details?.image?.height}
+                  quality={100}
+                  className={`rounded-sm h-[150px] lg:h-[250px] w-[185px] lg:w-[350px] xl:h-[350px] xl:w-[431px] xxl:h-[401px] xxl:w-[693px]`}
+                  loading="lazy"
+                  data-aos="flip-left"
+                />
+              )}
               <div className="w-full flex gap-1">
                 <div>
-                  <Image
-                    src={`https:${project5?.image?.fields?.file?.url}`}
-                    alt={project5?.title}
-                    width={project5?.image?.fields?.file?.details?.image?.width}
-                    height={
-                      project5?.image?.fields?.file?.details?.image?.height
-                    }
-                    quality={100}
-                    className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[328px] rounded-sm`}
-                    loading="lazy"
-                    data-aos="flip-right"
-                  />
+                  {project5?.image?.fields?.file?.url && (
+                    <Image
+                      src={`https:${project5?.image?.fields?.file?.url}`}
+                      alt={project5?.title}
+                      width={
+                        project5?.image?.fields?.file?.details?.image?.width
+                      }
+                      height={
+                        project5?.image?.fields?.file?.details?.image?.height
+                      }
+                      quality={100}
+                      className={`w-[120px] sm:w-1/2 lg:w-[150px] h-[150px] lg:h-[216px] xl:h-[210px] xl:w-[320px] xxl:h-[459px] xxl:w-[328px] rounded-sm`}
+                      loading="lazy"
+                      data-aos="flip-right"
+                    />
+                  )}
                 </div>
                 <div>
-                  <Image
-                    src={`https:${project6?.image?.fields?.file?.url}`}
-                    alt={project6?.title}
-                    width={project6?.image?.fields?.file?.details?.image?.width}
-                    height={
-                      project6?.image?.fields?.file?.details?.image?.height
-                    }
-                    quality={100}
-                    className={`w-[120px] sm:w-1/2 rounded-sm h-[150px] lg:h-[216px] lg:w-[180px] xl:w-[210px] xl:h-[210px] xxl:h-[460px] xxl:w-[328px]`}
-                    loading="lazy"
-                    data-aos="flip-right"
-                  />
+                  {project6?.image?.fields?.file?.url && (
+                    <Image
+                      src={`https:${project6?.image?.fields?.file?.url}`}
+                      alt={project6?.title}
+                      width={
+                        project6?.image?.fields?.file?.details?.image?.width
+                      }
+                      height={
+                        project6?.image?.fields?.file?.details?.image?.height
+                      }
+                      quality={100}
+                      className={`w-[120px] sm:w-1/2 rounded-sm h-[150px] lg:h-[216px] lg:w-[180px] xl:w-[210px] xl:h-[210px] xxl:h-[460px] xxl:w-[328px]`}
+                      loading="lazy"
+                      data-aos="flip-right"
+                    />
+                  )}
                 </div>
               </div>
             </div>

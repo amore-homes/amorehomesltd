@@ -106,16 +106,18 @@ export default function CommunityContent({ data }: any) {
                 key={`img-${index}`}
                 className="w-full relative flex flex-col gap-4 cursor-pointer"
               >
-                <Image
-                  src={`https:${img.image.fields.file.url}`}
-                  alt={img.name}
-                  width={img.image.fields.file.details.image.width}
-                  height={img.image.fields.file.details.image.height}
-                  quality={100}
-                  className={`rounded-lg h-[246px] w-full lg:w-[300px] xxl:w-[${img.image.fields.file.details.image.width}px] xl:w-[380px] xxl:w-[500px] xl:h-[380px] xxl:h-[500px]`}
-                  loading="lazy"
-                  data-aos="fade-left"
-                />
+                {img.image.fields.file.url && (
+                  <Image
+                    src={`https:${img.image.fields.file.url}`}
+                    alt={img.name}
+                    width={img.image.fields.file.details.image.width}
+                    height={img.image.fields.file.details.image.height}
+                    quality={100}
+                    className={`rounded-lg h-[246px] w-full lg:w-[300px] xxl:w-[${img.image.fields.file.details.image.width}px] xl:w-[380px] xxl:w-[500px] xl:h-[380px] xxl:h-[500px]`}
+                    loading="lazy"
+                    data-aos="fade-left"
+                  />
+                )}
                 <Typography className="w-full font-normal font-primary text-center md:text-center text-[25px]/[40px] sm:text-3xl/[40px] uppercase">
                   {img.name}
                 </Typography>
