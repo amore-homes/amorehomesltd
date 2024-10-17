@@ -1,22 +1,14 @@
-import * as React from "react"
-import Button from "@mui/material/Button"
+import { ShareIcon } from "@/components/SVGs"
+import { IconButton } from "@mui/material"
 import Menu from "@mui/material/Menu"
-import MenuItem from "@mui/material/MenuItem"
+import * as React from "react"
 import {
-  EmailIcon,
-  EmailShareButton,
   FacebookIcon,
   FacebookMessengerIcon,
   FacebookMessengerShareButton,
   FacebookShareButton,
-  FacebookShareCount,
-  InstapaperIcon,
-  InstapaperShareButton,
   LinkedinIcon,
   LinkedinShareButton,
-  PinterestIcon,
-  PinterestShareButton,
-  PinterestShareCount,
   TelegramIcon,
   TelegramShareButton,
   TwitterShareButton,
@@ -24,8 +16,6 @@ import {
   WhatsappShareButton,
   XIcon,
 } from "react-share"
-import { ShareIcon } from "@/components/SVGs"
-import { IconButton } from "@mui/material"
 
 export default function SharePostLink() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)

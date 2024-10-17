@@ -14,12 +14,10 @@ const withRetry = async (fn: any, retries = 3, delay = 1000) => {
     try {
       return await fn()
     } catch (error) {
-      console.log("attempt,retries", attempt, retries)
       if (attempt === retries) {
         throw error
         // return []
       }
-      console.log(`Attempt ${attempt} failed. Retrying in ${delay}ms...`)
       await new Promise((resolve) => setTimeout(resolve, delay))
     }
   }

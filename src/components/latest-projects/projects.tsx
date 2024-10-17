@@ -9,7 +9,6 @@ export default function Projects({ data }: any) {
   const project4 = data?.find((item: any) => item.name === "Update-4")
   const project5 = data?.find((item: any) => item.name === "Update-5")
   const project6 = data?.find((item: any) => item.name === "Update-6")
-  console.log("data", data)
   return (
     <div>
       {" "}
@@ -45,7 +44,7 @@ export default function Projects({ data }: any) {
             {project3?.image?.fields?.file?.url && (
               <Image
                 src={`https:${project3?.image?.fields?.file?.url}`}
-                alt={project3.title}
+                alt={project3?.title}
                 width={project3?.image?.fields?.file?.details?.image?.width}
                 height={project3?.image?.fields?.file?.details?.image?.height}
                 quality={100}

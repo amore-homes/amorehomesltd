@@ -51,7 +51,6 @@ export const StyledSelectFormControl = styled(FormControl)({
 
 export function moveItemToFront(array: any, item: any) {
   const ceoIndex = array.findIndex((person: any) => person.position === item)
-  console.log("index", array?.[0].position, ceoIndex, item)
   if (ceoIndex > -1) {
     const [ceo] = array.splice(ceoIndex, 1)
     array.unshift(ceo)

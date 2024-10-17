@@ -283,24 +283,27 @@ export default function OurCommunitiesPage({ data }: any) {
                           {type?.image?.fields && (
                             <Image
                               src={`https:${type?.image?.fields.file.url}`}
-                              alt={type.image.fields.title}
-                              width={type.image.fields.file.details.image.width}
+                              alt={type?.image?.fields?.title}
+                              width={
+                                type?.image?.fields?.file?.details?.image.width
+                              }
                               height={
-                                type.image.fields.file.details.image.height
+                                type?.image?.fields?.file?.details?.image
+                                  ?.height
                               }
                               quality={100}
                               className={`w-full lg:w-[280px] xl:w-[280px] xxl:w-[400px] h-[270px] rounded-[4px] hover:scale-[1.01]`}
                             />
                           )}
                           <h4 className="text-[#000000] text-left font-normal font-primary text-[17px]/[21.32px] px-6">
-                            {type.address}
+                            {type?.address}
                           </h4>
                           <div className="w-full grid grid-cols-3 lg:flex gap-2 lg:gap-6 px-6">
                             <div className="w-[100px] lg:w-[190.84px] h-[58.39px] flex justify-center items-center rounded-[13px] px-1 hover:scale-[1.02] shadow-[4px_8px_11px_0px_#00000040]">
                               <div className="w-full flex gap-1 justify-center items-center">
                                 <BathtubIcon />
                                 <h4 className="font-normal font-primary text-[#000000] text-left text-[16px]/[20px]">
-                                  {type.toilet}
+                                  {type?.toilet}
                                 </h4>
                               </div>
                             </div>
@@ -309,7 +312,7 @@ export default function OurCommunitiesPage({ data }: any) {
                               <div className="w-full flex gap-1 justify-center items-center ">
                                 <CouchIcon />
                                 <h4 className="font-normal font-primary text-[#000000] text-left text-[16px]/[20px]">
-                                  {type.room}
+                                  {type?.room}
                                 </h4>
                               </div>
                             </div>
@@ -318,7 +321,7 @@ export default function OurCommunitiesPage({ data }: any) {
                               <div className="w-full flex gap-1 justify-center items-center">
                                 <RulerIcon />
                                 <h4 className="font-normal font-primary text-[#000000] text-left text-[16px]/[20px]">
-                                  {`${type.dimension}`}
+                                  {`${type?.dimension}`}
                                 </h4>
                               </div>
                             </div>
