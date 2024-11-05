@@ -372,7 +372,7 @@ export default function HomePageLayoutWrapper({
           <CssBaseline />
           {children}
           <Link
-            href="https://wa.me/07003000400?text=Hi%2C%0AI%20would%20like%20to%20know%20more%20 information%20about%20the%20estates."
+            href="https://wa.me/08149343838?text=Hi%2C%0AI%20would%20like%20to%20know%20more%20 information%20about%20the%20estates."
             target="_blank"
             className="bg-[#4dbc4b] hover:bg-[#4FBB4D] fixed bottom-14 right-4 w-[220px] h-[48px] z-[2000000] rounded-full shadow-xl cursor-pointer hover:scale-[1.005] flex items-center justify-center font-primary font-bold text-white p-4 gap-2 text-sm"
           >

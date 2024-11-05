@@ -13,17 +13,25 @@ import OurTeamSection from "@/components/team"
 import BlogPostSection from "@/components/blog-post"
 
 export default function HomePage() {
-  console.log(`Node.js version: ${process.version}`)
   return (
     <div className="w-full">
       <div className="relative w-full h-screen overflow-hidden">
-        <iframe
+        {/* <iframe
           className="absolute top-0 left-0 w-full h-full pointer-events-none"
-          src="https://www.youtube.com/embed/WgUd6hmVvCY?autoplay=1&mute=1&loop=1&playlist=WgUd6hmVvCY"
+          src="/video/amore-vid.mp4"
           title="Amore homes yoyutube video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-        ></iframe>
+        ></iframe> */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <video
+            className="w-full h-full object-cover object-center"
+            src="/video/amore-vid.mp4"
+            autoPlay
+            loop
+            muted
+          ></video>
+        </div>
 
         <div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-[#04165880] backdrop-blur-sm gap-8">
           <div className="w-full flex flex-col justify-center items-center gap-2">

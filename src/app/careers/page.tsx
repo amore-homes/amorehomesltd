@@ -1,6 +1,5 @@
-import React from "react"
-import Careers from "."
 import { getEntriesByType } from "@/components/data/contentful"
+import Careers from "."
 
 const getCareers = async () => {
   const results = await getEntriesByType("careers")

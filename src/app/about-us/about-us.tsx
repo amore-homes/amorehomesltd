@@ -76,59 +76,6 @@ export default function AboutUs({
                         <p className="block text-secondary text-[16px]/[24px] font-normal font-primary text-left m-0">
                           {person.position}
                         </p>
-
-                        <div className="w-full flex flex-col gap-2">
-                          <div className="w-full flex gap-2 h-4 mt-1">
-                            {person.email && (
-                              <div className="flex gap-1 items-center border-r-2 border-grey-text pr-3">
-                                <EmailIcon />
-                                <p className="block text-secondary text-[14px]/[24px] font-normal font-primary text-left m-0">
-                                  {person.email}
-                                </p>
-                              </div>
-                            )}
-                            {person.email && (
-                              <div className="flex gap-1 items-center">
-                                <PhoneIcon />
-                                <p className="block text-secondary text-[14px]/[24px] font-normal font-primary text-left m-0">
-                                  {person.phoneNumber}
-                                </p>
-                              </div>
-                            )}
-                          </div>
-                          <div className="w-[100px] flex gap-3">
-                            {/* facebook */}
-                            <div className="flex justify-center items-center rounded-[13px] hover:scale-[1.02]">
-                              <Link
-                                href={`https://www.facebook.com/${person.facebook}`}
-                                target="_blank"
-                                className="w-full flex gap-1 justify-center items-center"
-                              >
-                                <FacebookIcon className="w-[18px] h-[18px]" />
-                              </Link>
-                            </div>
-                            {/* Instagram */}
-                            <div className="flex justify-center items-center rounded-[13px] hover:scale-[1.02]">
-                              <Link
-                                href={`https://www.instagram.com/${person.instagram}`}
-                                target="_blank"
-                                className="w-full flex gap-1 justify-center items-center"
-                              >
-                                <InstagramIcon className="w-[18px] h-[18px]" />
-                              </Link>
-                            </div>
-                            {/* Twitter */}
-                            <div className="flex justify-center items-center rounded-[13px] hover:scale-[1.02]">
-                              <Link
-                                href={`https://twitter.com/${person.twitter}`}
-                                target="_blank"
-                                className="w-full flex gap-1 justify-center items-center"
-                              >
-                                <TwitterIcon className="w-[14px] h-[14px]" />
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>

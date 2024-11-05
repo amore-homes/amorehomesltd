@@ -1,53 +1,95 @@
-import { type NextRequest, NextResponse } from "next/server"
-import nodemailer from "nodemailer"
-import Mail from "nodemailer/lib/mailer"
+// API route for subscribing
+import { NextResponse } from "next/server"
+import axios from "axios"
+import dbConnect from "../../../../lib/dbConnect"
+import Subscriber, { ISubscriber } from "../../../../models/Subscriber"
 
-export async function POST(request: NextRequest) {
-  const { email } = await request.json()
+interface RecaptchaResponse {
+  success: boolean
+  score: number
+  action: string
+  "error-codes"?: string[]
+}
 
-  const transport = nodemailer.createTransport({
-    // host: "smtp-mail.outlook.com",
-    // port: 587,
-    // secure: true,
-    service: "gmail",
-    /* 
-      setting service as 'gmail' is same as providing these setings:
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true
-      If you want to use a different email provider other than gmail, you need to provide these manually.
-      Or you can go use these well known services and their settings at
-      https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
-  */
-    auth: {
-      user: process.env.MY_EMAIL,
-      pass: process.env.MY_PASSWORD,
-    },
-  })
+export async function POST(request: Request) {
+  const { email, recaptchaToken } = await request.json()
 
-  const mailOptions: Mail.Options = {
-    from: process.env.MY_EMAIL,
-    to: process.env.MY_EMAIL,
-    // cc: email, (uncomment this line if you want to send a copy to the sender)
-    subject: `New Subscriber`,
-    text: email,
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!email || !emailRegex.test(email)) {
+    return NextResponse.json(
+      { message: "Invalid email address" },
+      { status: 400 }
+    )
   }
 
-  const sendMailPromise = () =>
-    new Promise<string>((resolve, reject) => {
-      transport.sendMail(mailOptions, function (err) {
-        if (!err) {
-          resolve("Email sent")
-        } else {
-          reject(err.message)
-        }
-      })
-    })
+  if (!recaptchaToken) {
+    return NextResponse.json(
+      { message: "reCAPTCHA token is missing" },
+      { status: 400 }
+    )
+  }
 
   try {
-    await sendMailPromise()
-    return NextResponse.json({ message: "Email sent" })
-  } catch (err) {
-    return NextResponse.json({ error: err }, { status: 500 })
+    // Verify reCAPTCHA token
+    const recaptchaSecretKey = process.env.RECAPTCHA_SECRET_KEY!
+    const recaptchaResponse = await axios.post<RecaptchaResponse>(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      null,
+      {
+        params: {
+          secret: recaptchaSecretKey,
+          response: recaptchaToken,
+        },
+      }
+    )
+
+    const {
+      success,
+      score,
+      action,
+      "error-codes": errorCodes,
+    } = recaptchaResponse.data
+
+    if (!success) {
+      console.error("reCAPTCHA verification failed:", errorCodes)
+      return NextResponse.json(
+        { message: "reCAPTCHA verification failed" },
+        { status: 400 }
+      )
+    }
+
+    if (action !== "subscribe" || score < 0.5) {
+      return NextResponse.json(
+        { message: "Suspicious activity detected" },
+        { status: 400 }
+      )
+    }
+
+    // Connect to the database
+    await dbConnect()
+
+    // Check if email is already subscribed
+    const existingSubscriber: ISubscriber | null = await Subscriber.findOne({
+      email,
+    })
+    if (existingSubscriber) {
+      return NextResponse.json(
+        { message: "Email already subscribed" },
+        { status: 409 }
+      )
+    }
+
+    // Add new subscriber
+    const newSubscriber = new Subscriber({ email })
+    await newSubscriber.save()
+
+    return NextResponse.json(
+      { message: "Subscription successful" },
+      { status: 200 }
+    )
+  } catch (error: any) {
+    console.error("Subscription error:", error)
+    return NextResponse.json({ message: "Server error" }, { status: 500 })
   }
 }

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.mjs",
     "lint": "next lint"
   },
   "dependencies": {
@@ -19,15 +19,18 @@
     "@mui/lab": "^5.0.0-alpha.170",
     "@mui/material": "^5.15.15",
     "@mui/material-nextjs": "^5.15.11",
+    "@sendgrid/mail": "^8.1.4",
     "@types/aos": "^3.0.7",
     "@types/lodash": "^4.17.0",
     "@types/nodemailer": "^6.4.15",
     "@types/react-google-recaptcha": "^2.1.9",
     "aos": "^2.3.4",
+    "autoprefixer": "^10.4.20",
     "axios": "^1.7.0",
     "contentful": "^10.12.7",
     "lodash": "^4.17.21",
     "lottie-react": "^2.4.0",
+    "mongoose": "^8.7.3",
     "next": "^14.2.15",
     "nodemailer": "^6.9.13",
     "react": "^18",
@@ -48,8 +51,8 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
     "typescript": "^5"
   }
 }

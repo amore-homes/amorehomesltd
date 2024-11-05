@@ -38,8 +38,6 @@ const nextConfig = {
   env: {
     CONTENTFUL_SPACE_ID: process.env.CONTENTFUL_SPACE_ID,
     CONTENTFUL_ACCESS_TOKEN: process.env.CONTENTFUL_ACCESS_TOKEN,
-    CONTENTFUL_PREVIEW_ACCESS_TOKEN:
-      process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
     CONTENTFUL_PREVIEW_SECRET: process.env.CONTENTFUL_PREVIEW_SECRET,
     CONTENTFUL_MANAGEMENT_TOKEN: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
     CONTENTFUL_BASEURL: process.env.CONTENTFUL_BASEURL,
@@ -47,6 +45,7 @@ const nextConfig = {
     RECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY,
     MY_EMAIL: process.env.MY_EMAIL,
     MY_PASSWORD: process.env.MY_PASSWORD,
+    PORT: process.env.PORT,
   },
 }
 export default nextConfig
