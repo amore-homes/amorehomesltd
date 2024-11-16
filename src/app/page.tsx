@@ -16,13 +16,6 @@ export default function HomePage() {
   return (
     <div className="w-full">
       <div className="relative w-full h-screen overflow-hidden">
-        {/* <iframe
-          className="absolute top-0 left-0 w-full h-full pointer-events-none"
-          src="/video/amore-vid.mp4"
-          title="Amore homes yoyutube video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe> */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
           <video
             className="w-full h-full object-cover object-center"

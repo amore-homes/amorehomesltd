@@ -199,8 +199,8 @@ export default function OurCommunitiesPage({ data }: any) {
                 label: "Amore court",
               },
               {
-                value: "utako",
-                label: "Utako",
+                value: "oak",
+                label: "Oak",
               },
               {
                 value: "lummi",

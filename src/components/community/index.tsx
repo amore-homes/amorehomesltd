@@ -11,6 +11,13 @@ export default function CommunityDescription({
   description,
   caption,
 }: any) {
+  console.log(
+    "imageData,name,description,caption",
+    imageData,
+    name,
+    description,
+    caption
+  )
   const HEADING_1 = ({ children }: any) => (
     <h1 className="w-full flex flex-col gap-2 text-primary-text text-[30px]/[35.4px] md:text-[35px]/[40px] text-left font-bold font-primary normal-case mt-2">
       {children}

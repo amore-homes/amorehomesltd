@@ -52,41 +52,41 @@ export default function LummiHomeFeatures() {
               <div className="w-full flex space-x-4 md:space-x-8">
                 <DoubleCheckIcon />
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  All room Wardrobes
+                  Ample Parking Space
                 </h4>
               </div>
               <div className="w-full flex space-x-4 md:space-x-8">
                 <DoubleCheckIcon />
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Kitchen cabinets and appliances
-                </h4>
-              </div>
-              <div className="w-full flex space-x-4 md:space-x-8">
-                <DoubleCheckIcon />
-
-                <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Smart solar power system
+                  4 Bedroom (all ensuite)
                 </h4>
               </div>
               <div className="w-full flex space-x-4 md:space-x-8">
                 <DoubleCheckIcon />
 
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Solar water heater
+                  1 Bedroom Servant Qtrs
                 </h4>
               </div>
               <div className="w-full flex space-x-4 md:space-x-8">
                 <DoubleCheckIcon />
 
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Ensuite servant quarters
+                  Sustainable Design
                 </h4>
               </div>
               <div className="w-full flex space-x-4 md:space-x-8">
                 <DoubleCheckIcon />
 
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Remote access
+                  All Room Wardrobes
+                </h4>
+              </div>
+              <div className="w-full flex space-x-4 md:space-x-8">
+                <DoubleCheckIcon />
+
+                <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
+                  Kitchen Cabinet and Appliances
                 </h4>
               </div>
 
@@ -94,21 +94,21 @@ export default function LummiHomeFeatures() {
                 <DoubleCheckIcon />
 
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Advance Security
+                  Smart Solar Power System
                 </h4>
               </div>
               <div className="w-full flex space-x-4 md:space-x-8">
                 <DoubleCheckIcon />
 
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Lighting control
+                  Solar Water Heater
                 </h4>
               </div>
               <div className="w-full flex space-x-4 md:space-x-8">
                 <DoubleCheckIcon />
 
                 <h4 className="text-primary-text text-[18px]/[30.4px] text-left font-bold font-primary capitalize">
-                  Distributed audio
+                  Home Automation
                 </h4>
               </div>
             </div>

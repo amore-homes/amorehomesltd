@@ -54,9 +54,9 @@ export default function Facilitity() {
                 </div>
                 <div className="flex flex-col gap-4">
                   <h4 className="text-primary-text text-[16px]/[28.4px] md:text-[25px]/[32.4px] text-left font-bold font-primary capitalize">
-                    Recreation area
+                    Children Play Ground
                     <span className="block text-grey-text text-[16px]/[30.4px] font-primary normal-text normal-case">
-                      We offer recreational amenities that foster mutual
+                      We offer play ground for children that foster mutual
                       support, understanding, and mental wellness for our
                       residents.
                     </span>
@@ -84,7 +84,22 @@ export default function Facilitity() {
 
                 <div className="flex flex-col gap-4">
                   <h4 className="text-primary-text text-[16px]/[28.4px] md:text-[25px]/[32.4px] text-left font-bold font-primary capitalize">
-                    24hrs Security
+                    24-hour Security
+                    <span className="block text-grey-text text-[16px]/[30.4px] font-primary normal-text">
+                      We prioritize our residents&apos; safety by providing
+                      24-hour security.
+                    </span>
+                  </h4>
+                </div>
+              </div>{" "}
+              <div className="w-full flex space-x-4 md:space-x-8">
+                <div className="w-[65px] h-[65px] rounded-full bg-border shadow-2xl flex justify-center items-center flex-shrink-0">
+                  <SecurityIcon />
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <h4 className="text-primary-text text-[16px]/[28.4px] md:text-[25px]/[32.4px] text-left font-bold font-primary capitalize">
+                    Security Intercom
                     <span className="block text-grey-text text-[16px]/[30.4px] font-primary normal-text">
                       We prioritize our residents&apos; safety by providing
                       24-hour security.
@@ -99,38 +114,7 @@ export default function Facilitity() {
 
                 <div className="flex flex-col gap-4">
                   <h4 className="text-primary-text text-[16px]/[28.4px] md:text-[25px]/[32.4px] text-left font-bold font-primary capitalize">
-                    Solar Power system
-                    <span className="block text-grey-text text-[16px]/[30.4px] font-primary normal-text">
-                      we integrate solar power systems such as solar powered
-                      water heaters, solar street lamps as well as backup
-                      Inverter System in our projects.
-                    </span>
-                  </h4>
-                </div>
-              </div>
-              <div className="w-full flex space-x-4 md:space-x-8">
-                <div className="w-[65px] h-[65px] rounded-full bg-border shadow-2xl flex justify-center items-center flex-shrink-0">
-                  <GymPersonIcon />
-                </div>
-
-                <div className="flex flex-col gap-4">
-                  <h4 className="text-primary-text text-[16px]/[28.4px] md:text-[25px]/[32.4px] text-left font-bold font-primary capitalize">
-                    Gym house/ clubhouse
-                    <span className="block text-grey-text text-[16px]/[30.4px] font-primary normal-text">
-                      We ensure a safe and serene environment where energy
-                      efficiency is maximized
-                    </span>
-                  </h4>
-                </div>
-              </div>
-              <div className="w-full flex space-x-4 md:space-x-8">
-                <div className="w-[65px] h-[65px] rounded-full bg-border shadow-2xl flex justify-center items-center flex-shrink-0">
-                  <SwimmingPersonIcon />
-                </div>
-
-                <div className="flex flex-col gap-4">
-                  <h4 className="text-primary-text text-[16px]/[28.4px] md:text-[25px]/[32.4px] text-left font-bold font-primary capitalize">
-                    Swimming
+                    Solar Street Lamps
                     <span className="block text-grey-text text-[16px]/[30.4px] font-primary normal-text">
                       we integrate solar power systems such as solar powered
                       water heaters, solar street lamps as well as backup
